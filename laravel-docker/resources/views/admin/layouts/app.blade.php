@@ -9,25 +9,29 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link rel="shortcut icon" href="img/icons/icon-48x48.png" />
 
-	<link rel="canonical" href="https://demo-basic.adminkit.io/" />
-
 	<title>Tino | Admin</title>
 
+	<!-- Favicon -->
     <link rel="icon" href="{{ asset('monogram.png') }}" type="image/x-icon">
     
 	<link href="admin/css/app.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+	<!-- custom css -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 
 <body>
 	<div class="wrapper">
-		
+		<!-- This is the sidebar -->
         @include('admin/layouts.sidebar')
 
 		<div class="main">
 			
+			<!-- This is the header -->
             @include ('admin/layouts.navbar')
 
+			<!-- This is the body/content page -->
             @yield('content')
             
 		</div>
