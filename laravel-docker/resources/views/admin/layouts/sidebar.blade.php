@@ -27,8 +27,12 @@
 							<i class="align-middle" data-feather="package"></i> <span class="align-middle">Products</span>
 						</a>
 						<ul id="dashboards" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar" style="">
-							<li class="sidebar-item"><a class="sidebar-link" href="{{url('add_product')}}"><i class="align-middle me-2" data-feather="chevron-right"></i>Add Product</a></li>
-							<li class="sidebar-item"><a class="sidebar-link" href="/dashboard-ecommerce"><i class="align-middle me-2" data-feather="chevron-right"></i>View Products </a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="{{url('add_product')}}">
+								<i class="align-middle me-2" data-feather="chevron-right"></i>Add Product</a>
+							</li>
+							<li class="sidebar-item"><a class="sidebar-link" href="/dashboard-ecommerce">
+								<i class="align-middle me-2" data-feather="chevron-right"></i>View Products </a>
+							</li>
 						</ul>
 					</li>
 

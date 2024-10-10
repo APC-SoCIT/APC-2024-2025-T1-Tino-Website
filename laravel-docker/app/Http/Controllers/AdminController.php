@@ -10,4 +10,9 @@ class AdminController extends Controller
     {
         return view('admin.dashboard');
     }
+
+    public function add_product()
+    {
+        return view('admin.add_product');
+    }
 }
