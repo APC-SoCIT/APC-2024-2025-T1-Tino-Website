@@ -1,0 +1,32 @@
+/* Gotham Light */
+@font-face {
+    font-family: 'Gotham';
+    src: url('/fonts/Gotham-Light_0.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+/* Gotham Light Italic */
+@font-face {
+    font-family: 'Gotham';
+    src: url('/fonts/Gotham-LightIta.otf') format('opentype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+/* Gotham Medium */
+@font-face {
+    font-family: 'Gotham';
+    src: url('/fonts/Gotham-Medium_0.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Gotham', sans-serif;
+}
+
+h1 {
+    font-family: 'Gotham', sans-serif;
+    font-weight: 500; /* or the desired font-weight */
+}
