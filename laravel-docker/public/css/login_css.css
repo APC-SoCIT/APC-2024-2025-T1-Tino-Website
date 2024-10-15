@@ -1,0 +1,49 @@
+body {
+    background: linear-gradient(to bottom, #F5EACF, #FFFFFF);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.login-container {
+    width: 400px;
+    height: 420px;
+    padding: 50px;
+    background: linear-gradient(to bottom, #F5EACF, #FFFFFF);
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.20); /* updated box shadow */
+    text-align: center;
+}
+.login-container img {
+    width: 100%; /* Set to full width of the container */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 120px; /* Set a max width as needed */
+    margin: 0 auto 10px auto; /* Center image with bottom margin */
+}
+.login-container h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+    font-weight: bold;
+}
+.login-container p {
+    margin-bottom: 20px;
+    color: #666;
+}
+.form-control {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #dadada; /* added light gray border */
+    border-radius: 10px;
+    background-color: #F7F7F7; /* changed background color to light gray */
+}
+.btn-primary {
+    width: 100%;
+    padding: 10px;
+    border-radius: 15px;
+    font-size: 16px;
+    background-color: #000000 !important; 
+    border-color: #000000; 
+}
