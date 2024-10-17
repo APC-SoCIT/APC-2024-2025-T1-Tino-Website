@@ -7,7 +7,7 @@
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="shortcut icon" href="img/icons/icon-48x48.png" />
-    <title>Tino | Admin</title>
+    <title>Tino</title>
 
     <!-- Favicon -->
     <link rel="icon" href="{{ asset('monogram.png') }}" type="image/x-icon">
@@ -123,7 +123,6 @@
             </ul>
         </div>
     </div>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
