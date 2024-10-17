@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\URL;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AppointmentController;
 
-$url  = config('app.url');
+$url = config('app.url');
 URL::forceRootUrl($url);
 
 // Public Routes
