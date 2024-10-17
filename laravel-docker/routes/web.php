@@ -6,7 +6,7 @@ use App\Http\Controllers\AppointmentController;
 
 // Public Routes
 Route::get('/', function () {
-    return view('welcome');
+    return view('appointment');
 });
 
 // Admin Routes with auth middleware applied
