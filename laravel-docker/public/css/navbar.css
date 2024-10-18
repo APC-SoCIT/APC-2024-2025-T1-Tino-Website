@@ -29,4 +29,17 @@
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+    display: flex;
+    justify-content: center; /* Centering the nav items */
+    flex-grow: 1; /* Allow the nav items to take available space */
+}
+@media (max-width: 767.98px) {
+    .navbar-brand {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .navbar-toggler {
+        margin-right: auto;
+    }
 }

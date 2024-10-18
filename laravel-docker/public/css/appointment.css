@@ -1,0 +1,47 @@
+.photo-placeholder {
+    background-color: #e8dfd0;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: #000;
+}
+.step-indicator {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    position: relative;
+}
+.step {
+    text-align: center;
+    color: #6c6c6c;
+    flex: 1;
+    position: relative;
+}
+.step.active .circle {
+    background-color: #4a2c2a;
+    color: #fff;
+}
+.step .circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 10px;
+    background-color: #c0b2a1;
+    color: #fff;
+    z-index: 1;
+}
+.line-between {
+    position: absolute;
+    top: 15px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: #c0b2a1;
+    z-index: 0;
+}
