@@ -6,7 +6,7 @@
     height: 30px; /* Adjust the height as needed */
 }
 .nav-link {
-    font-family: 'Gotham', sans-serif;
+    font-family: 'Jost', sans-serif;
     font-size: 1rem;
     color: #333;
     margin-right: 1.5rem;
@@ -16,7 +16,7 @@
     color: #000;
 }
 .nav-link.active {
-    font-weight: bold;
+    font-weight: 700;
     text-decoration: underline;
     text-underline-offset: 10px; /* Adds more space between text and underline */
 }
@@ -29,4 +29,17 @@
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+    display: flex;
+    justify-content: center; /* Centering the nav items */
+    flex-grow: 1; /* Allow the nav items to take available space */
+}
+@media (max-width: 767.98px) {
+    .navbar-brand {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .navbar-toggler {
+        margin-right: auto;
+    }
 }
