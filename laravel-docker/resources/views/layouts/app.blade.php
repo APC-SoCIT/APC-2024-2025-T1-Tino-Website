@@ -23,6 +23,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/navbar.css') }}" rel="stylesheet">
     <link href="{{ asset('css/appointment.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/welcome.css') }}" rel="stylesheet">
 
 </head>
 <body>

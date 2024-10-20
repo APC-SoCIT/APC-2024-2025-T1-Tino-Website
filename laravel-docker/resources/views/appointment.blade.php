@@ -1,4 +1,3 @@
-
 @extends('layouts.app')
 
 @section('content')
@@ -26,7 +25,7 @@
     </div>
 
     <!-- choose -->
-    <div class="container mt-5">
+    <!-- <div class="container mt-5">
         <div class="card">
             <div class="card-body">
                 <div>
@@ -72,5 +71,5 @@
                 <button class="btn btn-book">Book</button>
             </div>
         </div>
-    </div>
+    </div> -->
 @endsection
