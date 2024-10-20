@@ -10,8 +10,25 @@ URL::forceRootUrl($url);
 
 // Public Routes
 Route::get('/', function () {
-    return view('appointment');
+    return view('welcome');
 });
+
+Route::get('/bespoke', function () {
+    return view('bespoke');
+})->name('bespoke');
+
+
+Route::get('/shop', function () {
+    return view('shop');
+})->name('shop');
+
+Route::get('/our-house', function () {
+    return view('our_house');
+})->name('our_house');
+
+Route::get('/appointment', function () {
+    return view('appointment');
+})->name('appointment');
 
 // Admin Routes with auth middleware applied
 Route::middleware(['auth', 'verified'])->group(function () {
