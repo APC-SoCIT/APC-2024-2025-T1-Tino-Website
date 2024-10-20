@@ -2,5 +2,6 @@
 
 @section('content')
 
-<h1>Welcome Page</h1>
+<h1>Shop Page</h1>
+
 @endsection
