@@ -1,13 +1,13 @@
 body {
-    font-family: "Jost", sans-serif;
+    font-family: 'Jost', sans-serif;
 }
 
 h1 {
-    font-family: "Jost", sans-serif;
-    font-weight: 500; /* or the desired font-weight */
+    font-family: 'Jost', sans-serif;
+    font-weight: 900;
 }
 
-a {
-    font-family: "Jost", sans-serif;
-    font-weight: 500; /* or the desired font-weight */
+p {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
 }

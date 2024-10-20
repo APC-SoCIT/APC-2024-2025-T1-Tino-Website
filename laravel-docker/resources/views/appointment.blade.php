@@ -90,15 +90,16 @@
             PHOTO
         </div>
         <div class="step-indicator">
-            <div class="line-between"></div>
             <div class="step active">
                 <div class="circle">1</div>
                 <div>Choose Appointment</div>
             </div>
+            <div class="line-between line-between-1-2"></div> <!-- Line between 1 and 2 -->
             <div class="step">
                 <div class="circle">2</div>
                 <div>Your Information</div>
             </div>
+            <div class="line-between line-between-2-3"></div> <!-- Line between 2 and 3 -->
             <div class="step">
                 <div class="circle">3</div>
                 <div>Confirmation</div>
@@ -155,6 +156,8 @@
         </div>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
