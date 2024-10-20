@@ -9,6 +9,8 @@ $url = config('app.url');
 URL::forceRootUrl($url);
 
 // Public Routes
+
+//main/welcome page
 Route::get('/', function () {
     return view('welcome');
 });
