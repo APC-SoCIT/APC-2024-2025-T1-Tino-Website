@@ -20,7 +20,7 @@
 </div>
       <div class="flex-row">
       <a class="image" href="#">
-            <img alt="TIÑO logo" src="{{ asset('images/product/olpianaandres.png') }}"/>
+            <img alt="TIÑO logo" src="{{ asset('images/shop/olpianaandres.png') }}"/>
         </a>
         <span class="olpiana-andres-gift-card">Olpiana Andres Gift Card</span>
         <span class="delivery-info">
@@ -39,13 +39,13 @@
       <span class="denominations">Denominations</span>
       <div class="flex-row-d">
       <a class="image-3" href="#">
-            <img alt="Gift Card 1" src="{{ asset('images/product/giftcard1.png') }}"/>
+            <img alt="Gift Card 1" src="{{ asset('images/shop/giftcard1.png') }}"/>
         </a>
         <a class="image-4" href="#">
-            <img alt="Gift Card 2" src="{{ asset('images/product/giftcard2.png') }}"/>
+            <img alt="Gift Card 2" src="{{ asset('images/shop/giftcard2.png') }}"/>
         </a>
         <a class="image-5" href="#">
-            <img alt="Gift Card 3" src="{{ asset('images/product/giftcard3.png') }}"/>
+            <img alt="Gift Card 3" src="{{ asset('images/shop/giftcard3.png') }}"/>
         </a>
       </div>
         <button class="button-time">
