@@ -1,0 +1,139 @@
+/* Hero Section */
+.hero-section {
+    position: relative;
+    height: 500px;
+    background-image: url('/images/bespokeimg1.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    text-align: center;
+}
+
+/* Text Overlay for Hero Section */
+.hero-text {
+    font-size: 80px;
+    color: #000000; /* This will make the text black */
+    font-weight: bold;
+    z-index: 1; /* Ensure the text is above the image */
+    position: absolute; /* Ensure it's placed within the hero section */
+}
+
+/* Content Section */
+.content-section {
+    text-align: center;
+    margin: 50px auto;
+    width: 80%;
+    max-width: 800px;
+    color: #333;
+    font-family: Arial, sans-serif;
+}
+
+.content-section h2 {
+    font-size: 24px;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+.content-section p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #666;
+}
+
+/* Image Section ONE*/
+.image-one {
+    position: relative;
+    padding: 5px;
+    text-align: center;
+    background-image: url('/images/bespokeimg1.png'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    height: 500px; /* Adjusted height for more visibility */
+    margin: 20px auto; /* Center the section horizontally */
+    max-width: 98%;
+    border-radius: 10px; /* Add rounded corners */
+}
+/* Image Section TWO */
+.image-two {
+    position: relative;
+    padding: 5px;
+    text-align: center;
+    background-image: url('/images/bespokeimg1.png'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    height: 500px; /* Adjusted height for more visibility */
+    margin: 20px auto; /* Center the section horizontally */
+    max-width: 98%;
+    border-radius: 10px; /* Add rounded corners */
+}
+/* Image Section THREE*/
+.image-three {
+    position: relative;
+    padding: 5px;
+    text-align: center;
+    background-image: url('/images/bespokeimg1.png'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    height: 500px; /* Adjusted height for more visibility */
+    margin: 20px auto; /* Center the section horizontally */
+    max-width: 98%;
+    border-radius: 10px; /* Add rounded corners */
+}
+/* New Image FOUR */
+.image-four {
+    position: relative;
+    padding: 5px;
+    text-align: center;
+    background-image: url('/images/bespokeimg1.png'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    height: 500px; /* Adjusted height for more visibility */
+    margin: 20px auto; /* Center the section horizontally */
+    max-width: 98%;
+    border-radius: 10px; /* Add rounded corners */
+}
+
+/* Text Overlay for New Section */
+.image-text-overlay {
+    font-size: 50px;
+    color: #000000;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+/* Button and Line Section */
+.button-and-line {
+    text-align: center;
+    margin-top: 40px; /* Adds space before the button */
+}
+
+/* Learn More Button */
+.learn-more-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #5a3e36;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.learn-more-button:hover {
+    background-color: #4a2e26;
+}
+
+/* Small Line Below the Button */
+.divider-line {
+    width: 100px; /* Width of the line */
+    margin: 20px auto 40px auto; /* Space after the line */
+    border: none;
+    border-top: 3px solid #3F1818; /* Thicker line */
+}
