@@ -1,5 +1,5 @@
 .navbar {
-    background-color: #f8f6ef;
+    background-color: #FBFAF1;
     padding: 1rem 2rem;
 }
 .navbar-brand img {
@@ -14,6 +14,11 @@
 
 .nav-link:hover {
     color: #000;
+}
+.nav-link.active {
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 10px; /* Adds more space between text and underline */
 }
 .navbar-icons {
     font-size: 1.2rem;
