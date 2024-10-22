@@ -1,0 +1,145 @@
+.breadcrumb {
+    padding-left: 20px; /* Moves breadcrumb 20px to the left */
+    padding-top: 20px; /* Moves breadcrumb 20px down from the top */
+}
+
+/* hero-section (Bespoke part) */
+.hero-section {
+    background-image: url('/images/bespokeimg1.png');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 50px;
+    color: #5a3e36;
+}
+
+.hero-text {
+    max-width: 600px;
+}
+
+.hero-text h1 {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #5a3e36;
+}
+
+.hero-text p {
+    font-size: 24px;
+    color: #1F2119;
+    margin: 0;
+}
+
+/* Adjustments for the Method Section */
+.title {
+    text-align: center;
+    margin-top: 80px; /* Increase the top margin */
+    margin-bottom: 50px; /* Increase bottom spacing */
+}
+
+.title h1 {
+    font-size: 70px; /* Make the "Method" text larger */
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 20px; /* Add spacing below the title */
+}
+
+.title p {
+    font-size: 30px; /* Increase the subtitle font size */
+    color: #666;
+    margin-bottom: 40px; /* Adjust spacing below subtitle */
+}
+
+.section {
+    padding: 0; /* Remove padding to enlarge the section */
+}
+
+/* Headings in sections (e.g., Measurements, Consultation) */
+.section h1 {
+    font-size: 50px; /* Increased by 20% from 42px */
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-top: 0;
+}
+
+/* Paragraph text in sections */
+.section p {
+    font-size: 26px; /* Keep the font size */
+    color: #3F1818; /* Set the new color */
+    margin: 0;
+    line-height: 2.0;
+    max-width: 600px;
+}
+
+/* General container styles to ensure everything aligns properly */
+.section {
+    padding: 0; /* No padding */
+    text-align: center;
+}
+
+/* Image and text sections with no padding */
+.image-section img {
+    width: 100%;
+    height: auto;
+    display: block;
+    padding: 0; /* No padding */
+    margin: 0; /* No margin */
+}
+
+.text-section {
+    padding: 0; /* No padding */
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+/* Removes gutters (padding) between columns */
+.row.no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.row.no-gutters > [class*='col-'] {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.p-0 {
+    padding: 0;
+}
+
+/* APPOINTMENT BUTTON */
+.appointment-button {
+    display: inline-block;
+    padding: 15px 30px; /* Adjust padding for size */
+    background-color: #5a3e36; /* Button background color */
+    color: #fff; /* Text color */
+    font-size: 20px; /* Font size */
+    font-weight: bold; /* Font weight */
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth transition */
+    margin-top: 20px; /* Add some spacing */
+}
+
+.appointment-button:hover {
+    background-color: #4a2e26; /* Darker shade on hover */
+}
+
+.spacer {
+    min-width: 170px; 
+}
