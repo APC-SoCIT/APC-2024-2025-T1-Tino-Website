@@ -32,6 +32,10 @@ Route::get('/appointment', function () {
     return view('appointment');
 })->name('appointment');
 
+Route::get('/history', function () {
+    return view('history');
+})->name('history');
+
 // Admin Routes with auth middleware applied
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
