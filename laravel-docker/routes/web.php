@@ -3,14 +3,14 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\URL;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\AppointmentController;
+use App\Http\Controllers\BookingController;
 
 $url = config('app.url');
 URL::forceRootUrl($url);
 
 // Public Routes
 
-//main/welcome page
+// Main/welcome page
 Route::get('/', function () {
     return view('welcome');
 });
@@ -18,7 +18,6 @@ Route::get('/', function () {
 Route::get('/bespoke', function () {
     return view('bespoke');
 })->name('bespoke');
-
 
 Route::get('/shop', function () {
     return view('shop');
@@ -44,7 +43,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 });
 
 // Booking Routes (no authentication required)
-Route::post('/add_booking/{id}', [AppointmentController::class, 'add_booking']);
+Route::post('add_booking', [BookingController::class, 'store'])->name('add_booking');
 
 // Authentication Routes
 require __DIR__.'/auth.php';
