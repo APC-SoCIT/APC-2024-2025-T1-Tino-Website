@@ -25,6 +25,9 @@
     <link href="{{ asset('css/appointment.css') }}" rel="stylesheet">
     <link href="{{ asset('css/welcome.css') }}" rel="stylesheet">
 
+     <!-- Custom CSS for specific pages -->
+     @yield('custom-css')
+
 </head>
 <body>
     
@@ -32,6 +35,9 @@
 
     @yield('content')
 
+    @include('layouts.footer')
+    <script src="{{ asset('js/carousel.js') }}"></script>
+    <script src="{{ asset('js/scroll.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

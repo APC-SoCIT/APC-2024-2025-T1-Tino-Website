@@ -161,4 +161,282 @@
         transform: translateX(-50%);
     }
 }
-  
+
+.services-section {
+    text-align: center;
+    padding: 2rem;
+}
+
+.services-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.discover-link {
+    font-size: 1rem;
+    color: #2b1b17;
+    text-decoration: underline;
+    display: block;
+    margin-bottom: 2rem;
+}
+
+.services-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.service-item {
+    background-color: #f4ede9;
+    padding: 1.5rem;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.video-clip {
+    background-color: #e6dad3;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    color: #2b1b17;
+}
+
+/* Tiño Services Section */
+.services-section {
+    background-color: #f5f0e6;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.services-section h2 {
+    font-family: 'Arial', sans-serif;
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.services-section .discover-more {
+    display: inline-block;
+    font-family: 'Arial', sans-serif;
+    color: #4b0000;
+    text-decoration: none;
+    margin-bottom: 40px;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.services-section .discover-more:hover {
+    text-decoration: underline;
+}
+
+.service-cards {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 40px;
+    gap: 20px;
+}
+
+/* Increased width for each card to make the container larger */
+/* .first-card {
+    width: 32%; 
+
+}
+
+.second-card {
+    width: 30%; 
+}
+
+.third-card {
+    width: 30%; 
+} */
+
+.service-card {
+    width: 32%; /* Keep the width of each card */
+    margin-left: 3px; /* Add space between the cards */
+    text-align: center;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.video-placeholder {
+    background-color: #e6dac8;
+    height: 320px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    font-size: 20px;
+    color: #333;
+    border-radius: 5px;
+}
+
+.play-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 28px;
+    color: #4b0000;
+}
+
+.service-card h4 {
+    font-size: 20px;
+    margin: 25px 0 15px;
+    color: #4b0000;
+}
+
+.service-card p {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 25px;
+}
+
+.schedule-btn {
+    background-color: #4b0000;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.schedule-btn:hover {
+    background-color: #660000;
+}
+
+/* History of Tiño Section */
+.history-section {
+    background-color: #f5f0e6;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.history-section h2 {
+    font-family: 'Arial', sans-serif;
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.history-section .discover-more {
+    display: inline-block;
+    font-family: 'Arial', sans-serif;
+    color: #4b0000;
+    text-decoration: none;
+    margin-bottom: 40px;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.history-section .discover-more:hover {
+    text-decoration: underline;
+}
+
+/* Carousel Wrapper */
+.carousel-wrapper {
+    position: relative;
+    width: 100%; /* Full width of the container */
+    height: 600px; /* Adjust height for the entire carousel wrapper */
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Images Container */
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    gap: 30px; /* Space between images */
+    width: 200%; /* Double the width to accommodate two images */
+}
+
+/* Individual Images */
+.carousel-img {
+    width: 50%; /* Each image takes up 50% of the total width to show two images */
+    height: 600px; /* Fixed height for all images */
+    background-color: #e6dac8;
+    object-fit: cover; /* Ensure the image covers the container while maintaining aspect ratio */
+    flex-shrink: 0;
+    border-radius: 10px;
+}
+
+/* Circular Carousel Buttons */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 10;
+    width: 40px; /* Button size */
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-btn:hover {
+    background-color: #4b0000;
+    color: #fff;
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+
+/* Cloth Selections Section */
+.cloth-selections-section {
+    background-color: #f5f0e6; /* Consistent background color */
+    padding: 40px 0;
+    text-align: center;
+}
+
+.cloth-selections-title {
+    font-family: 'Arial', sans-serif;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 30px; /* Space between heading and logos */
+    text-align: center;
+}
+
+.cloth-logos-wrapper {
+    display: flex;
+    justify-content: center; /* Center the logos horizontally */
+    align-items: center;
+}
+
+.cloth-logos {
+    display: flex;
+    gap: 200px; 
+}
+
+.cloth-logos img {
+    max-height: 100px;
+    max-width: 100px;
+    object-fit: contain;
+}
