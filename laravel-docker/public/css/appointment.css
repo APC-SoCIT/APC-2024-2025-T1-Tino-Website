@@ -1,116 +1,148 @@
-.photo-placeholder {
-    background-color: #e8dfd0;
-    height: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2rem;
-    color: #000;
+.hero-image {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
 }
-.step-indicator {
+
+.steps {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 20px;
-    position: relative;
+    justify-content: space-around;
+    align-items: stretch; /* Stretch items to the same height */
+    margin-top: 1rem;
+    padding: 1rem 0;
 }
 
 .step {
-    text-align: center;
-    color: #6c6c6c;
+    color: #5a2d29;
     flex: 1;
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the number and text horizontally */
+    text-align: center; /* Center the text */
+    margin: 0 1rem; /* Add margin to step for spacing */
 }
 
-.step.active .circle {
-    background-color: #4a2c2a;
-    color: #fff;
-}
-
-.step .circle {
-    width: 30px;
-    height: 30px;
+.step-number {
+    font-size: 1.2rem; /* Font size for numbers */
+    font-weight: bold;
+    width: 40px;       /* Width of the circles */
+    height: 40px;      /* Height of the circles */
+    line-height: 40px; /* Center number vertically */
     border-radius: 50%;
+    background-color: #f4eae6;
+    color: #5a2d29;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 auto 10px;
-    background-color: #c0b2a1;
+    margin-bottom: 0.5rem; /* Space between number and text */
+}
+
+.step-text {
+    font-size: 1rem;
+    text-align: center; /* Center text */
+    line-height: 1.2;  /* Line height for spacing */
+    white-space: normal; /* Allow wrapping */
+    margin-top: 0.5rem; /* Margin to separate text from number */
+}
+
+.step.active .step-number {
+    background-color: #5a2d29;
     color: #fff;
-    z-index: 1;
+}
+
+.step.active .step-text {
+    color: #5a2d29;
+}
+
+@media (max-width: 768px) {
+    .step {
+        flex: 1 1 30%; /* Allow the steps to shrink on smaller screens */
+        min-height: 100px; /* Optional: set a minimum height for the steps */
+    }
 }
 
 .card {
-    border: 1px solid #333; /* Thicker and darker border for the box */
-    border-radius: 0; /* Remove border radius */
-    margin-bottom: 20px; /* Spacing between cards */
-    box-shadow: none; /* No box shadow */
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
 }
-
 .card-body {
-    padding: 40px; /* Increase padding inside the card to make the box bigger */
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 30px;
 }
-
 .card-title {
-    font-size: 1.5rem; /* Larger font for card titles */
     font-weight: bold;
-    color: #333; /* Darker color for titles */
+    font-size: 1.1rem;
+    margin-bottom: 30px; /* Added margin to create distance */
+}
+.card-text {
+    font-size: 0.9rem;
+    color: #666;
+}
+.btn-book {
+    background-color: #4b2b2b;
+    color: white;
+    border: none;
+    padding: 5px 25px;
+    font-size: 0.9rem;
+    align-self: flex-start; /* Align button to the top */
+}
+.calendar-container {
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f8f5e9;
+    margin-top: 20px;
+    flex-direction: row;
+}
+.calendar {
+    text-align: center;
+}
+.calendar h5 {
+    margin-bottom: 20px;
+}
+.time-slots {
+    text-align: center;
+}
+.time-slots h5 {
     margin-bottom: 10px;
 }
-
-.card-text {
-    font-size: 1rem;
-    color: #666; /* Lighter color for text */
-    margin-bottom: 0; /* Adjust for spacing */
+.time-slots p {
+    margin-bottom: 20px;
+    color: #6c757d;
 }
-
-.btn-book {
-    background-color: #333; /* Dark button background */
-    color: #fff;
-    padding: 10px 40px; /* Increased left and right padding */
-    border-radius: 0; /* No border radius */
+.time-slot {
+    border: 1px solid #6c757d;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px;
+    display: inline-block;
+    width: 80px;
+    text-align: center;
+    color: #6c757d;
+}
+.time-slots-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+.btn-view-all, .btn-continue {
+    background-color: #007bff;
+    color: white;
     border: none;
-    align-self: flex-end; /* Align button to the bottom */
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 20px;
 }
-
-.btn-book:hover {
-    background-color: #555; /* Slightly lighter background on hover */
-    color: #fff; /* Ensure text stays white on hover */
+.hidden {
+    display: none;
 }
-.modal {
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.4);
-}
-
-.modal-content {
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-}
-
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-.booking-form {
-    opacity: 0;
-    transition: opacity 0.5s ease;
-}
-
-.booking-form.show {
-    opacity: 1;
+@media (max-width: 768px) {
+    .calendar-container {
+        flex-direction: column;
+    }
 }
