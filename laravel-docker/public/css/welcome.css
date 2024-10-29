@@ -1,32 +1,32 @@
 /* Hero Section */
-.hero-section {
+.hero-section-welcome {
     position: relative;
     height: 100vh; /* Full viewport height */
     background-size: cover;
     background-position: center;
-}
+  }
   
-.hero-content {
+  .hero-content {
     position: absolute;
     top: 50%;
     left: 10%;
     transform: translateY(-50%);
     color: white;
-}
+  }
   
-.hero-content h1 {
+  .hero-content h1 {
     font-size: 3rem;
     font-weight: bold;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Adds a shadow for readability */
-}
+  }
   
-.hero-content p {
+  .hero-content p {
     font-size: 1.25rem;
     margin: 1rem 0;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-}
+  }
   
-.btn-discover {
+  .btn-discover {
     background-color: #800000;
     color: white;
     border: none;
@@ -34,11 +34,11 @@
     font-size: 1rem;
     border-radius: 0;
     transition: background-color 0.3s ease;
-}
+  }
   
-.btn-discover:hover {
+  .btn-discover:hover {
     background-color: #660000;
-}
+  }
   
   /* Product Section */
 .product-section {

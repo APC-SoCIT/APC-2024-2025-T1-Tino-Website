@@ -36,6 +36,7 @@
     @include('layouts.navbar')
 
     @yield('content')
+    @yield('custom-css')
 
     @include('layouts.footer')
     <script src="{{ asset('js/carousel.js') }}"></script>

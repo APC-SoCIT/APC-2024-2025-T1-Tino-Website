@@ -8,7 +8,7 @@
             left: 0;
             right: 0;
             z-index: 10;
-            background-color: transparent;
+            background-color: transparent !important;
             transition: background-color 0.3s ease; /* Smooth transition */
         }
          .navbar.scrolled {
@@ -47,7 +47,8 @@
 @section('content')
 
 <!-- Hero Section -->
-<section class="hero-section" style="background-image: url('{{ asset('images/welcome/hero.png') }}');">
+<section class="hero-section
+" style="background-image: url('{{ asset('images/welcome/hero.png') }}');">
     <div class="hero-content">
         <h1>Where Quality Counts.</h1>
         <p>Quality can only be achieved by using good materials. We use the best at every step: fabric, lining, and threads.</p>
