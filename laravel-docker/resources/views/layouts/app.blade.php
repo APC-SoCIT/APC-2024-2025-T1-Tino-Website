@@ -28,6 +28,7 @@
     <link href="{{ asset('css/bespoke.css') }}" rel="stylesheet">
     <link href="{{ asset('css/our_house.css') }}" rel="stylesheet">
     <link href="{{ asset('css/shop.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/giftcard.css') }}" rel="stylesheet">
 
 </head>
 <body>
