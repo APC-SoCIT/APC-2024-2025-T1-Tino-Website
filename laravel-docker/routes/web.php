@@ -34,6 +34,11 @@ Route::get('/appointment', function () {
 // Admin Routes with auth middleware applied
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
+    // Appointment Routes
+    Route::get('/view_appointment', [AdminController::class, 'view_appointment'])->name('view_appointment');
+    Route::get('/bookings', [BookingController::class, 'getBookings']);
+    Route::get('/bookings/{id}', [BookingController::class, 'getBookingDetails']); // To fetch details for a specific booking
+    // Product Routes
     Route::get('/create_product', [AdminController::class, 'create_product']);
     Route::post('/add_product', [AdminController::class, 'add_product']);
     Route::get('/view_product', [AdminController::class, 'view_product']);

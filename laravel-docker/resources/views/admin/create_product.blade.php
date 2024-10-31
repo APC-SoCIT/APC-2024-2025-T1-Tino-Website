@@ -65,16 +65,15 @@
                         <div class="card-body">
                             <input type="file" name="images" multiple>
                         </div>
-                    </div>
-
+                    </div>         
+                </div>
                     <!-- Submit Button Positioned at the Bottom Right -->
                     
                     <div class="card-footer text-end">
                         <button type="submit" class="btn btn-primary btn-sm">Add Product</button>
                     </div>
                     
-                </form> <!-- End of Product Form -->
-            </div>
+            </form> <!-- End of Product Form -->
         </div>
     </div>
 </main>

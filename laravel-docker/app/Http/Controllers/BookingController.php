@@ -7,6 +7,15 @@ use Illuminate\Http\Request;
 
 class BookingController extends Controller
 {
+    public function index()
+    {
+        // Fetch all bookings
+        $bookings = Booking::all(); 
+
+        // Pass the bookings variable to the view
+        return view('view_appointments', compact('bookings'));
+    }
+
     public function store(Request $request)
     {
         // Validate the incoming request data
@@ -20,6 +29,7 @@ class BookingController extends Controller
             'phone' => 'required|string|max:255',
             'email' => 'required|email|max:255',
             'preferred_channel' => 'nullable|array',
+            'category_of_interest' => 'nullable|array',
             'number_of_people' => 'required|integer',
             'additional_info' => 'nullable|string',
         ]);
@@ -44,11 +54,35 @@ class BookingController extends Controller
             'phone' => $validatedData['phone'],
             'email' => $validatedData['email'],
             'preferred_channel' => implode(',', $validatedData['preferred_channel'] ?? []), // Convert array to string
+            'category_of_interest' => implode(',', $validatedData['category_of_interest'] ?? []), // Convert array to string
             'number_of_people' => $validatedData['number_of_people'],
             'additional_info' => $validatedData['additional_info'],
         ]);
 
         // Redirect or return response
         return redirect()->back()->with('success', 'Booking added successfully!');
+    }
+    
+    public function getBookings()
+    {
+        // Fetch bookings and format data for FullCalendar
+        $bookings = Booking::all()->map(function ($booking) {
+            return [
+                'title' => $booking->appointment_type, // Only display appointment type
+                'start' => $booking->date, // Use only date (without time) for FullCalendar
+                'extendedProps' => [
+                    'first_name' => $booking->first_name,
+                    'last_name' => $booking->last_name,
+                    'country' => $booking->country,
+                    'phone' => $booking->phone,
+                    'email' => $booking->email,
+                    'preferred_channel' => $booking->preferred_channel,
+                    'category_of_interest' => $booking->category_of_interest,
+                    'number_of_people' => $booking->number_of_people,
+                    'additional_info' => $booking->additional_info,
+                ]
+            ];
+        });
+        return response()->json($bookings);
     }
 }

@@ -20,14 +20,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="card selectable-appointment" data-type="Made-To-Order Fittings">
-                    <div class="card-body">
-                        <div>
-                            <h5 class="card-title">Made-To-Order Fittings</h5>
-                            <p class="card-text">In place of fitting.</p>
-                        </div>
-                    </div>
-                </div>
                 <div class="card selectable-appointment" data-type="Consultation">
                     <div class="card-body">
                         <div>
@@ -125,6 +117,27 @@
                                     <!-- Add more channels as needed -->
                                 </div>
                                 <div class="mb-3">
+                                    <label class="form-label">Categories of Interest *</label>
+                                    <small class="form-text">Note: You may pick several channels.</small>
+                                    <div class="form-check">
+                                        <input class="form-check-input" id="shoes" type="checkbox" name="category_of_interest[]" value="Shoes" />
+                                        <label class="form-check-label" for="shoes">Shoes</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" id="jackets" type="checkbox" name="category_of_interest[]" value="Jackets" />
+                                        <label class="form-check-label" for="jackets">Jackets</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" id="suits" type="checkbox" name="category_of_interest[]" value="Suits" />
+                                        <label class="form-check-label" for="suits">Suits</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" id="accessories" type="checkbox" name="category_of_interest[]" value="Accessories" />
+                                        <label class="form-check-label" for="accessories">Accessories</label>
+                                    </div>
+                                    <!-- Add more channels as needed -->
+                                </div>
+                                <div class="mb-3">
                                     <label class="form-label" for="peopleCount">How many people are getting fit during this appointment *</label>
                                     <input class="form-control" id="peopleCount" type="number" name="number_of_people" />
                                 </div>
@@ -133,7 +146,6 @@
                                     <textarea class="form-control" id="additionalInfo" name="additional_info" rows="3"></textarea>
                                 </div>
                                 <div class="d-flex justify-content-between">
-                                    <button class="btn btn-cancel" type="button">Cancel</button>
                                     <button class="btn btn-book" type="submit">Book</button>
                                 </div>
                             </form>
@@ -197,10 +209,26 @@
             timeSlots.forEach(s => s.classList.remove('selected'));
             this.classList.add('selected');
 
-            // Remove AM/PM suffix and store in hidden input
-            hiddenTimeInput.value = this.getAttribute('data-time').replace(/(AM|PM)/, '').trim();
+            // Get the selected time
+            const selectedTime = this.getAttribute('data-time');
+            const [time, modifier] = selectedTime.split(' ');
+
+            // Split hours and minutes
+            let [hours, minutes] = time.split(':');
+
+            // Convert to 24-hour format
+            if (modifier === 'PM' && hours !== '12') {
+                hours = parseInt(hours, 10) + 12; // Convert PM hour
+            }
+            if (modifier === 'AM' && hours === '12') {
+                hours = '00'; // Convert 12 AM to 00
+            }
+
+            // Store in hidden input in 24-hour format
+            hiddenTimeInput.value = `${hours}:${minutes}`;
         });
     });
+
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
 <script>

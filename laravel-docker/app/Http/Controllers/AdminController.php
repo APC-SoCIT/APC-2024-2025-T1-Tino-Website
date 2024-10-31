@@ -6,11 +6,22 @@ use Illuminate\Http\Request;
 
 use App\Models\Product;
 
+use App\Models\Booking;
+
 class AdminController extends Controller
 {
     public function dashboard()
     {
         return view('admin.dashboard');
+    }
+
+    public function view_appointment()
+    {
+        // Fetch all bookings
+        $bookings = Booking::all(); 
+
+        // Pass the bookings variable to the view
+        return view('admin.view_appointment', compact('bookings'));
     }
 
     public function create_product()
