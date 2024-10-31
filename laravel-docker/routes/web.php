@@ -34,10 +34,14 @@ Route::get('/appointment', function () {
 // Admin Routes with auth middleware applied
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
+    
     // Appointment Routes
     Route::get('/view_appointment', [AdminController::class, 'view_appointment'])->name('view_appointment');
-    Route::get('/bookings', [BookingController::class, 'getBookings']);
+    Route::get('/bookings', [BookingController::class, 'getBookings']); // Get all bookings for FullCalendar
     Route::get('/bookings/{id}', [BookingController::class, 'getBookingDetails']); // To fetch details for a specific booking
+    Route::post('/confirm_booking/{id}', [BookingController::class, 'confirmBooking'])->name('confirm.booking');
+    Route::post('/decline_booking/{id}', [BookingController::class, 'declineBooking'])->name('decline.booking');
+
     // Product Routes
     Route::get('/create_product', [AdminController::class, 'create_product']);
     Route::post('/add_product', [AdminController::class, 'add_product']);
@@ -46,6 +50,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/update_product/{id}', [AdminController::class, 'update_product']);
     Route::post('/edit_product/{id}', [AdminController::class, 'edit_product']);
 });
+
 
 // Booking Routes (no authentication required)
 Route::post('add_booking', [BookingController::class, 'store'])->name('add_booking');

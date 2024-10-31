@@ -7,13 +7,15 @@ use Illuminate\Http\Request;
 
 class BookingController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        // Fetch all bookings
-        $bookings = Booking::all(); 
-
-        // Pass the bookings variable to the view
-        return view('view_appointments', compact('bookings'));
+        $status = $request->input('status');
+        
+        $bookings = Booking::when($status, function($query) use ($status) {
+            return $query->where('status', $status);
+        })->get();
+        
+        return view('admin.view_appointment', compact('bookings'));
     }
 
     public function store(Request $request)
@@ -62,11 +64,34 @@ class BookingController extends Controller
         // Redirect or return response
         return redirect()->back()->with('success', 'Booking added successfully!');
     }
+
+    public function confirmBooking($id)
+    {
+        $booking = Booking::find($id);
+        if ($booking) {
+            $booking->status = 'confirmed'; // Update status to confirmed
+            $booking->save();
+        }
+        
+        return redirect()->back();
+    }
+
+
+    public function declineBooking($id)
+    {
+        $booking = Booking::find($id);
+        if ($booking) {
+            $booking->status = 'canceled'; // Update status to declined
+            $booking->save();
+        }
+        
+        return redirect()->back()->with('success', 'Booking declined successfully!');
+    }
     
     public function getBookings()
     {
         // Fetch bookings and format data for FullCalendar
-        $bookings = Booking::all()->map(function ($booking) {
+        $bookings = Booking::where('status', 'confirmed')->get()->map(function ($booking) {
             return [
                 'title' => $booking->appointment_type, // Only display appointment type
                 'start' => $booking->date, // Use only date (without time) for FullCalendar
@@ -85,4 +110,5 @@ class BookingController extends Controller
         });
         return response()->json($bookings);
     }
+
 }

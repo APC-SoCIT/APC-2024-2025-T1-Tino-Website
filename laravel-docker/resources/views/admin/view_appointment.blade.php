@@ -30,21 +30,20 @@
             height: 60vh;
         }
     }
-
-	
 </style>
-
 
 <main class="content">
     <div class="container-fluid p-0">
-        <h1>Client <strong>Appointments</strong></h1>
+        <h1 class="h3 mb-3" >Client <strong>Appointments</strong></h1>
         <div id="calendar"></div> <!-- Calendar container -->
 
         <div class="card mt-4"> <!-- Add margin top for spacing -->
             <table class="table my-0">
+            
                 <thead>
                     <tr>
                         <th class="d-none d-md-table-cell">Appointment Type</th>
+                        <th class="d-none d-md-table-cell">Interests</th>
                         <th class="d-none d-md-table-cell">Client Name</th>
                         <th class="d-none d-md-table-cell">Country</th>
                         <th class="d-none d-md-table-cell">Phone</th> 
@@ -58,26 +57,35 @@
                 <tbody>
                     @if($bookings->isEmpty())
                         <tr>
-                            <td colspan="6" class="text-center">No pending appointments have been made.</td>
+                            <td colspan="10" class="text-center">No pending appointments have been made.</td>
                         </tr>
                     @else
                         @foreach($bookings as $booking)
                         <tr>
                             <td class="d-none d-md-table-cell">{{ $booking->appointment_type }}</td>
+                            <td class="d-none d-md-table-cell">{{ $booking->category_of_interest }}</td>
                             <td class="d-none d-md-table-cell">{{ $booking->first_name }} {{ $booking->last_name }}</td>
-                            <td class="d-none d-md-table-cell">{{ $booking->country }}</td> <!-- New data -->
-                            <td class="d-none d-md-table-cell">{{ $booking->phone }}</td> <!-- New data -->
-                            <td class="d-none d-md-table-cell">{{ $booking->email }}</td> <!-- New data -->
-                            <td class="d-none d-md-table-cell">{{ $booking->preferred_channel }}</td> <!-- New data -->
-                            <td class="d-none d-md-table-cell">{{ $booking->number_of_people }}</td> <!-- New data -->
-                            <td class="d-none d-md-table-cell">{{ $booking->additional_info }}</td> <!-- New data -->
+                            <td class="d-none d-md-table-cell">{{ $booking->country }}</td>
+                            <td class="d-none d-md-table-cell">{{ $booking->phone }}</td>
+                            <td class="d-none d-md-table-cell">{{ $booking->email }}</td>
+                            <td class="d-none d-md-table-cell">{{ $booking->preferred_channel }}</td>
+                            <td class="d-none d-md-table-cell">{{ $booking->number_of_people }}</td>
+                            <td class="d-none d-md-table-cell">{{ $booking->additional_info }}</td>
                             <td style="width: 150px;">
-                                <a href="#" class="btn btn-info btn-sm">
-                                    <i data-feather="eye"></i></a>
-                                <a href="{{ url('update_booking', $booking->id) }}" class="btn btn-primary btn-sm">
-                                    <i data-feather="edit"></i></a>
-                                <a href="{{ url('delete_booking', $booking->id) }}" class="btn btn-danger btn-sm">
-                                    <i data-feather="trash"></i></a>
+                                @if($booking->status === 'confirmed')
+                                    <span class="badge bg-success">Confirmed</span>
+                                @elseif($booking->status === 'canceled')
+                                    <span class="badge bg-danger">Cancelled</span>
+                                @else
+                                    <form action="{{ route('confirm.booking', $booking->id) }}" method="POST" style="display:inline;">
+                                        @csrf
+                                        <button type="submit" class="btn btn-primary btn-sm">Confirm</button>
+                                    </form>
+                                    <form action="{{ route('decline.booking', $booking->id) }}" method="POST" style="display:inline;">
+                                        @csrf
+                                        <button type="submit" class="btn btn-danger btn-sm">Cancel</button>
+                                    </form>
+                                @endif
                             </td>
                         </tr>
                         @endforeach
@@ -96,35 +104,30 @@
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js'></script>
 
     <script>
-        <!-- FullCalendar CSS and JS -->
-    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css' rel='stylesheet' />
-    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js'></script>
-
-    <script>
         document.addEventListener('DOMContentLoaded', function() {
-        var calendarEl = document.getElementById('calendar');
-        var calendar = new FullCalendar.Calendar(calendarEl, {
-            initialView: 'customFiveRow',
-            views: {
-                customFiveRow: {
-                    type: 'dayGrid',
-                    duration: { months: 1 },
-                    buttonText: '5 Rows',
-                    dayRender: function(info) {
-                        const allRows = document.querySelectorAll('.fc-daygrid-row');
-                        allRows.forEach((row, index) => {
-                            if (index >= 5) {
-                                row.style.display = 'none';
-                            }
-                        });
+            var calendarEl = document.getElementById('calendar');
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'customFiveRow',
+                views: {
+                    customFiveRow: {
+                        type: 'dayGrid',
+                        duration: { months: 1 },
+                        buttonText: '5 Rows',
+                        dayRender: function(info) {
+                            const allRows = document.querySelectorAll('.fc-daygrid-row');
+                            allRows.forEach((row, index) => {
+                                if (index >= 5) {
+                                    row.style.display = 'none';
+                                }
+                            });
+                        }
                     }
-                }
-            },
-            eventColor: '#378006',
-            events: '/bookings',
-            eventDisplay: 'block'
+                },
+                eventColor: '#378006',
+                events: '/bookings', // Adjust the URL as needed to match your route
+                eventDisplay: 'block'
+            });
+            calendar.render();
         });
-        calendar.render();
-    });
     </script>
 @endsection
