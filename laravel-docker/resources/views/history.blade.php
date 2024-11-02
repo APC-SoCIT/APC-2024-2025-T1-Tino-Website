@@ -4,7 +4,7 @@
 <body>
 
     <!-- Hero Section -->
-    <div class="hero-section">
+    <div class="hero-section-history">
         <div class="hero-text">PHOTO</div>
     </div>
 
