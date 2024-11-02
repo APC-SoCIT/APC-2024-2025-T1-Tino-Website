@@ -8,6 +8,9 @@ use App\Models\Product;
 
 use App\Models\Booking;
 
+use Illuminate\Support\Facades\DB;
+
+
 class AdminController extends Controller
 {
     public function dashboard()
@@ -91,4 +94,29 @@ class AdminController extends Controller
         $data->save();
         return redirect('view_product');
     }
+    public function adminDashboard()
+    {
+        // Fetch appointment data grouped by country and order by total appointments in descending order
+        $countryAppointments = DB::table('bookings')
+            ->select('country', DB::raw('count(id) as total_appointments'))
+            ->groupBy('country')
+            ->orderBy('total_appointments', 'desc')
+            ->limit(5) // Limit to top 5 countries
+            ->get();
+        
+        // Prepare labels and data for the pie chart
+        $plabels = [];
+        $pdata = [];
+        foreach ($countryAppointments as $appointment) {
+            $plabels[] = $appointment->country;
+            $pdata[] = $appointment->total_appointments;
+        }
+
+        // Pass the variables to the view
+        return view('admin.dashboard', compact('plabels', 'pdata'));
+    }
+
+
+
+
 }

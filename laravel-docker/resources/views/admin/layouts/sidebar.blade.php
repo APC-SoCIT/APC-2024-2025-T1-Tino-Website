@@ -10,11 +10,11 @@
 						Pages
 					</li>
 
-					<!-- <li class="sidebar-item">
-						<a class="sidebar-link" href="#">
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="{{ url('/dashboard') }}">
               				<i class="align-middle" data-feather="bar-chart-2"></i> <span class="align-middle">Dashboard</span>
             			</a>
-					</li> -->
+					</li>
 
 					<li class="sidebar-item">
 						<a class="sidebar-link" href="{{url('view_appointment')}}">

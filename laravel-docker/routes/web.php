@@ -33,7 +33,7 @@ Route::get('/appointment', function () {
 
 // Admin Routes with auth middleware applied
 Route::middleware(['auth', 'verified'])->group(function () {
-    Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
+    Route::get('/dashboard', [AdminController::class, 'adminDashboard'])->name('dashboard');
     
     // Appointment Routes
     Route::get('/view_appointment', [AdminController::class, 'view_appointment'])->name('view_appointment');
