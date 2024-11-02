@@ -22,11 +22,13 @@
     <!-- custom css -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/navbar.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/footer.css') }}" rel="stylesheet">
     <link href="{{ asset('css/appointment.css') }}" rel="stylesheet">
     <link href="{{ asset('css/welcome.css') }}" rel="stylesheet">
     <link href="{{ asset('css/bespoke.css') }}" rel="stylesheet">
     <link href="{{ asset('css/our_house.css') }}" rel="stylesheet">
     <link href="{{ asset('css/history.css') }}" rel="stylesheet">
+
 
 </head>
 <body>
@@ -34,7 +36,11 @@
     @include('layouts.navbar')
 
     @yield('content')
+    @yield('custom-css')
 
+    @include('layouts.footer')
+    <script src="{{ asset('js/carousel.js') }}"></script>
+    <script src="{{ asset('js/scroll.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
