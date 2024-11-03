@@ -19,9 +19,29 @@ Route::get('/bespoke', function () {
     return view('bespoke');
 })->name('bespoke');
 
+Route::get('/shop/shoes', function () {
+    return view('/shop/shoes');
+})->name('shoes');
+
+Route::get('/shop/jackets', function () {
+    return view('/shop/jackets');
+})->name('jackets');
+
+Route::get('/shop/accessories', function () {
+    return view('/shop/accessories');
+})->name('accessories');
+
+Route::get('/shop/product_details', function () {
+    return view('/shop/product_details');
+})->name('product_details');
+
 Route::get('/shop', function () {
     return view('shop');
 })->name('shop');
+
+Route::get('/shop/giftcard', function () {
+    return view('/shop/giftcard');
+})->name('giftcard');
 
 Route::get('/our-house', function () {
     return view('our_house');
