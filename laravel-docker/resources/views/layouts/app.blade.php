@@ -33,6 +33,11 @@
     <link href="{{ asset('css/shop.css') }}" rel="stylesheet">
     <link href="{{ asset('css/giftcard.css') }}" rel="stylesheet">
     <link href="{{ asset('css/history.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/map.css') }}" rel="stylesheet">
+
+     <!-- leaflet -->
+     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 
 
 </head>
@@ -44,6 +49,7 @@
     @yield('custom-css')
 
     @include('layouts.footer')
+    <script src="{{ asset('js/map.js') }}"></script>
     <script src="{{ asset('js/carousel.js') }}"></script>
     <script src="{{ asset('js/scroll.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>

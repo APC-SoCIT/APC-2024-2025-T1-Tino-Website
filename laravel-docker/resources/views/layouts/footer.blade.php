@@ -9,7 +9,7 @@
     <a href="#">About</a>
     <a href="#">Gallery</a>
     <a href="#">Contact</a>
-    <a href="#">Map</a>
+    <a href="{{ route('map') }}">Map</a>
    </div>
 
    <div class="logo">

@@ -34,6 +34,10 @@ Route::get('/our-house', function () {
     return view('our_house');
 })->name('our_house');
 
+Route::get('/map', function () {
+    return view('map');
+})->name('map');
+
 Route::get('/appointment', function () {
     return view('appointment');
 })->name('appointment');
@@ -64,6 +68,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
 // Booking Routes (no authentication required)
 Route::post('add_booking', [BookingController::class, 'store'])->name('add_booking');
+
+
 
 // Authentication Routes
 require __DIR__.'/auth.php';
