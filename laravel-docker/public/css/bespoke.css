@@ -1,9 +1,71 @@
-.breadcrumb {
-    padding-left: 20px; /* Moves breadcrumb 20px to the left */
-    padding-top: 20px; /* Moves breadcrumb 20px down from the top */
+/* Global mobile layout changes for the section */
+@media (max-width: 767px) {
+    .section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .row {
+        flex-direction: column-reverse;
+    }
+
+    .text-section {
+        order: 2;
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    .image-section {
+        order: 1;
+        width: 100%;
+        padding: 0 15px; /* Add padding around the image on mobile */
+    }
+
+    .image-section img {
+        width: 100%; /* Ensure the image takes full width */
+        height: auto;
+    }
+
+    .hero-text h1 {
+        font-size: 36px;
+    }
+
+    .hero-text p {
+        font-size: 18px;
+    }
+
+    .breadcrumb {
+        padding-left: 20px; /* Reduce padding for mobile view */
+    }
+
+    .appointment-button {
+        font-size: 18px;
+        padding: 12px 20px;
+    }
 }
 
-/* hero-section (Bespoke part) */
+/* Desktop / Larger screens */
+@media (min-width: 768px) {
+    .section {
+        padding: 0; /* Retain padding for larger screens */
+    }
+
+    .image-section img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .text-section {
+        padding: 0;
+        max-width: 80%;
+        margin: 0 auto;
+        text-align: center;
+    }
+}
+
+/* Hero Section */
 .hero-section {
     background-image: url('/images/bespokeimg1.png');
     background-size: cover;
@@ -36,61 +98,37 @@
 /* Adjustments for the Method Section */
 .title {
     text-align: center;
-    margin-top: 80px; /* Increase the top margin */
-    margin-bottom: 50px; /* Increase bottom spacing */
+    margin-top: 80px;
+    margin-bottom: 50px;
 }
 
 .title h1 {
-    font-size: 70px; /* Make the "Method" text larger */
+    font-size: 70px;
     font-weight: bold;
     color: #000;
-    margin-bottom: 20px; /* Add spacing below the title */
+    margin-bottom: 20px;
 }
 
 .title p {
-    font-size: 30px; /* Increase the subtitle font size */
+    font-size: 30px;
     color: #666;
-    margin-bottom: 40px; /* Adjust spacing below subtitle */
+    margin-bottom: 40px;
 }
 
 .section {
-    padding: 0; /* Remove padding to enlarge the section */
-}
-
-/* Headings in sections (e.g., Measurements, Consultation) */
-.section h1 {
-    font-size: 50px; /* Increased by 20% from 42px */
-    font-weight: bold;
-    margin-bottom: 20px;
-    margin-top: 0;
-}
-
-/* Paragraph text in sections */
-.section p {
-    font-size: 26px; /* Keep the font size */
-    color: #3F1818; /* Set the new color */
-    margin: 0;
-    line-height: 2.0;
-    max-width: 600px;
-}
-
-/* General container styles to ensure everything aligns properly */
-.section {
-    padding: 0; /* No padding */
+    padding: 0;
     text-align: center;
 }
 
-/* Image and text sections with no padding */
 .image-section img {
     width: 100%;
     height: auto;
     display: block;
-    padding: 0; /* No padding */
-    margin: 0; /* No margin */
+    margin: 0;
 }
 
 .text-section {
-    padding: 0; /* No padding */
+    padding: 0;
     text-align: center;
     display: flex;
     justify-content: center;
@@ -100,46 +138,23 @@
     margin: 0 auto;
 }
 
-/* Removes gutters (padding) between columns */
-.row.no-gutters {
-    margin-right: 0;
-    margin-left: 0;
-}
-
-.row.no-gutters > [class*='col-'] {
-    padding-right: 0;
-    padding-left: 0;
-}
-
-.no-gutters {
-    margin-right: 0;
-    margin-left: 0;
-    padding-right: 0;
-    padding-left: 0;
-}
-
-.p-0 {
-    padding: 0;
-}
-
-/* APPOINTMENT BUTTON */
 .appointment-button {
     display: inline-block;
-    padding: 15px 30px; /* Adjust padding for size */
-    background-color: #5a3e36; /* Button background color */
-    color: #fff; /* Text color */
-    font-size: 20px; /* Font size */
-    font-weight: bold; /* Font weight */
-    text-decoration: none; /* Remove underline */
-    border-radius: 5px; /* Rounded corners */
-    transition: background-color 0.3s; /* Smooth transition */
-    margin-top: 20px; /* Add some spacing */
+    padding: 15px 30px;
+    background-color: #5a3e36;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    margin-top: 20px;
 }
 
 .appointment-button:hover {
-    background-color: #4a2e26; /* Darker shade on hover */
+    background-color: #4a2e26;
 }
 
 .spacer {
-    min-width: 170px; 
+    min-width: 170px;
 }

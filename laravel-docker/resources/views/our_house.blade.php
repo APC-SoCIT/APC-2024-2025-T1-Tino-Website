@@ -25,11 +25,11 @@
 
     <!-- ONE -->
     <div class="image-one">
-        <div class="image-text-overlay">PHOTO</div>
+        <div class="image-text-overlay">History</div>
     </div>
 
     <div class="button-and-line">
-        <a href="{{ route('appointment') }}" class="learn-more-button">Learn More</a>
+        <a href="{{ route('history') }}" class="learn-more-button">Learn More</a>
         <hr class="divider-line" />
     </div>
 
