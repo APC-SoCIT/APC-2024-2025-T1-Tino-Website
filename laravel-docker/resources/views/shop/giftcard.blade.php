@@ -1,14 +1,24 @@
 @extends('layouts.app')
 
 @section('content')
+<head>
+  <link rel="stylesheet" type="text/css" href="giftcard.css">
+</head>
 <body>
-    <div class="rectangle"><span class="photo">PHOTO</span></div>
-    <div class="rectangle-2">
+    <!-- Hero Section -->
+<section class="hero-section" style="background-image: url('{{ asset('images/welcome/hero.png') }}');">
+    <div class="hero-content">
+    </div>
+</section>
+
+    <!-- Hero Section End -->
+
+    <div class="rectangle-69">
   <a class="text-item" href="{{ route('shoes') }}">Shoes</a>
   <a class="text-item" href="{{ route('jackets') }}">Safari Jackets</a>
   <a class="text-item" href="{{ route('giftcard') }}">Gift Cards</a>
   <a class="text-item" href="{{ route('accessories') }}">Accessories</a>
-</div>
+    </div>
       <div class="flex-row">
       <a class="image" href="#">
             <img alt="TIÑO logo" src="{{ asset('images/shop/olpianaandres.png') }}"/>

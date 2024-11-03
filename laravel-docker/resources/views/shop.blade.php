@@ -2,9 +2,14 @@
 
 @section('content')
 <body>
-  <div class="rectangle"> 
-    <img class="photo" src="images/shop/placeholder.png" alt="Photo">
-  </div>
+  <!-- Hero Section -->
+<section class="hero-section" style="background-image: url('{{ asset('images/welcome/hero.png') }}');">
+    <div class="hero-content">
+    </div>
+</section>
+
+    <!-- Hero Section End -->
+
     <div class="rectangle-69">
   <a class="text-item" href="{{ route('shoes') }}">Shoes</a>
   <a class="text-item" href="{{ route('jackets') }}">Safari Jackets</a>
@@ -16,33 +21,74 @@
         <div class="rectangle-2b"></div>
         <div class="rectangle-3"></div>
         <div class="rectangle-4"></div>
-        <div class="search-5"></div>
-        <div class="search-6"></div>
-        <div class="vector"></div>
-        <div class="rectangle-7">
-          <div class="frame-8"><div class="vector-9"></div></div>
-          <span class="category">Category</span>
-        </div>
-        <div class="rectangle-a">
-          <div class="frame-b"><div class="vector-c"></div></div>
-          <span class="sort-by">Sort By</span>
-        </div>
-        <div class="rectangle-d">
-          <span class="color">Color</span>
-          <div class="flex-row-a">
-            <div class="vector-e"></div>
-            <div class="vector-f"></div>
-            <div class="vector-10"></div>
-            <div class="vector-11"></div>
-            <div class="vector-12"></div>
-          </div>
-          <div class="flex-row-dce">
-            <div class="vector-13"></div>
-            <div class="vector-14"></div>
-            <div class="vector-15"></div>
-            <div class="vector-16"></div>
-          </div>
-        </div>
+
+ <div class="dropdown-container">
+          
+        <div class="search-bar">
+    <input type="text" placeholder="Search">
+    <button type="submit"><i class="search-icon">🔍</i></button>
+  </div>
+
+  <div class="dropdown">
+    <button class="dropdown-button">Category</button>
+    <div class="dropdown-content">
+      <a href="#">Option 1</a>
+      <a href="#">Option 2</a>
+      <a href="#">Option 3</a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <button class="dropdown-button">Sort By</button>
+    <div class="dropdown-content">
+      <a href="#">Option A</a>
+      <a href="#">Option B</a>
+      <a href="#">Option C</a>
+    </div>
+  </div>
+
+  <div class="color-box">
+    <p class="color-label">Color</p>
+    <div class="color-options">
+      <div class="color-circle" style="background-color: #A2834D;"></div>
+      <div class="color-circle" style="background-color: #0000FF;"></div>
+      <div class="color-circle" style="background-color: #4B3026;"></div>
+      <div class="color-circle" style="background-color: #8B0000;"></div>
+      <div class="color-circle" style="background-color: #000080;"></div>
+      <div class="color-circle" style="background-color: #808000;"></div>
+      <div class="color-circle" style="background-color: #FFC0CB;"></div>
+      <div class="color-circle" style="background-color: #D2B48C;"></div>
+      <div class="color-circle" style="background-color: #2F2F2F;"></div>
+    </div>
+    
+    <div class="price-range">
+    <label for="price">Price: <span id="price-display">₱1,000 - ₱60,000</span></label>
+    <div class="slider-container">
+        <input type="range" id="min-price" min="1000" max="60000" step="100" value="1000">
+        <input type="range" id="max-price" min="1000" max="60000" step="100" value="60000">
+    </div>
+
+    <div class="toggle-container">
+    <span>On Sale</span>
+    <label class="switch">
+        <input type="checkbox">
+        <span class="slider"></span>
+    </label>
+    </div>
+
+    <div class="toggle-container">
+    <span>In Stock</span>
+    <label class="switch">
+        <input type="checkbox">
+        <span class="slider"></span>
+    </label>
+</div>
+        <button class="button" href="{{ route('giftcard') }}">
+          <span class="make-appointment">Gift Cards</span>
+        </button>
+      </div>
+  </div>
+
         <span class="pyjama-shirt-short-sleeves"
           >Pyjama Shirt (Short Sleeves)</span
         ><span class="pyjama-shirt-short-sleeves-17"
@@ -56,40 +102,47 @@
         ><span class="price-1a">₱6, 000.00</span
         ><span class="price-1b">₱6, 000.00</span>
       </div>
-      <div class="price-range">
-        <span class="price-separator">Price: </span
-        ><span class="currency-symbol">₱</span
-        ><span class="price-separator-1c">1000 - </span
-        ><span class="currency-symbol-1d">₱</span
-        ><span class="price-value">60000</span>
-      </div>
-      <div class="price-line"></div>
       <div class="flex-row-f">
         <div class="rectangle-1e"></div>
         <div class="rectangle-1f"></div>
         <div class="rectangle-20"></div>
-        <span class="on-sale">On Sale</span>
-        <div class="icon-color"></div>
-        <div class="icon-color-21"></div>
-        <span class="in-stock">In Stock</span
-        ><button class="button">
-          <span class="make-appointment">Gift Cards</span>
-        </button>
-      </div>
-      <div class="flex-row-aae">
-        <span class="pyjama-shirt">Pyjama Shirt (Short Sleeves)</span
-        ><span class="pyjama-shirt-22">Pyjama Shirt (Short Sleeves)</span
-        ><span class="pyjama-shirt-23">Pyjama Shirt (Short Sleeves)</span>
-      </div>
-      <div class="flex-row-24">
-        <span class="price-25">₱6, 000.00</span
-        ><span class="price-26">₱6, 000.00</span
-        ><span class="price-27">₱6, 000.00</span>
-      </div>
-      <div class="flex-row-d">
-        <div class="rectangle-28"></div>
-        <div class="rectangle-29"></div>
-        <div class="rectangle-2a"></div>
-      </div>
+      
+</div>
 </body>
+
+<script>
+        // Select the elements
+const minPriceSlider = document.getElementById("min-price");
+const maxPriceSlider = document.getElementById("max-price");
+const priceDisplay = document.getElementById("price-display");
+
+// Update the displayed price range
+function updatePriceDisplay() {
+    let minPrice = parseInt(minPriceSlider.value);
+    let maxPrice = parseInt(maxPriceSlider.value);
+
+    // Ensure min-price slider does not go beyond max-price slider
+    if (minPrice > maxPrice) {
+        minPrice = maxPrice;
+        minPriceSlider.value = minPrice;
+    }
+
+    // Ensure max-price slider does not go below min-price slider
+    if (maxPrice < minPrice) {
+        maxPrice = minPrice;
+        maxPriceSlider.value = maxPrice;
+    }
+
+    // Update the display
+    priceDisplay.textContent = `₱${minPrice.toLocaleString()} - ₱${maxPrice.toLocaleString()}`;
+}
+
+// Event listeners for slider changes
+minPriceSlider.addEventListener("input", updatePriceDisplay);
+maxPriceSlider.addEventListener("input", updatePriceDisplay);
+
+// Initial update
+updatePriceDisplay();
+
+    </script>
 @endsection
