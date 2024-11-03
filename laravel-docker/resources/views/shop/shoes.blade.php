@@ -22,7 +22,7 @@
         <div class="rectangle-3"></div>
         <div class="rectangle-4"></div>
 
- <div class="dropdown-container">
+        <div class="dropdown-container">
           
         <div class="search-bar">
     <input type="text" placeholder="Search">
@@ -67,16 +67,17 @@
         <input type="range" id="min-price" min="1000" max="60000" step="100" value="1000">
         <input type="range" id="max-price" min="1000" max="60000" step="100" value="60000">
     </div>
+  </div>
 
-    <div class="toggle-container">
+<div class="toggle-container">
     <span>On Sale</span>
     <label class="switch">
         <input type="checkbox">
         <span class="slider"></span>
     </label>
-    </div>
+</div>
 
-    <div class="toggle-container">
+<div class="toggle-container">
     <span>In Stock</span>
     <label class="switch">
         <input type="checkbox">
@@ -88,9 +89,9 @@
         </button>
       </div>
   </div>
-        <a class="pyjama-shirt-short-sleeves" href="{{ route('product_details') }}"> Pyjama Shirt (Short Sleeves) </a>
-        <span class="pyjama-shirt-short-sleeves"> Pyjama Shirt (Short Sleeves)</span>
-        <span class="pyjama-shirt-short-sleeves-17"
+        <span class="pyjama-shirt-short-sleeves"
+          >Pyjama Shirt (Short Sleeves)</span
+        ><span class="pyjama-shirt-short-sleeves-17"
           >Pyjama Shirt (Short Sleeves)</span
         ><span class="pyjama-shirt-short-sleeves-18"
           >Pyjama Shirt (Short Sleeves)</span
@@ -110,38 +111,20 @@
 </body>
 
 <script>
-        // Select the elements
-const minPriceSlider = document.getElementById("min-price");
-const maxPriceSlider = document.getElementById("max-price");
-const priceDisplay = document.getElementById("price-display");
+        const minPriceInput = document.getElementById("min-price");
+        const maxPriceInput = document.getElementById("max-price");
+        const priceDisplay = document.getElementById("price-display");
 
-// Update the displayed price range
-function updatePriceDisplay() {
-    let minPrice = parseInt(minPriceSlider.value);
-    let maxPrice = parseInt(maxPriceSlider.value);
+        function updatePriceDisplay() {
+            const minPrice = Math.min(parseInt(minPriceInput.value), parseInt(maxPriceInput.value));
+            const maxPrice = Math.max(parseInt(minPriceInput.value), parseInt(maxPriceInput.value));
+            priceDisplay.textContent = `₱${minPrice.toLocaleString()} - ₱${maxPrice.toLocaleString()}`;
+        }
 
-    // Ensure min-price slider does not go beyond max-price slider
-    if (minPrice > maxPrice) {
-        minPrice = maxPrice;
-        minPriceSlider.value = minPrice;
-    }
+        minPriceInput.addEventListener("input", updatePriceDisplay);
+        maxPriceInput.addEventListener("input", updatePriceDisplay);
 
-    // Ensure max-price slider does not go below min-price slider
-    if (maxPrice < minPrice) {
-        maxPrice = minPrice;
-        maxPriceSlider.value = maxPrice;
-    }
-
-    // Update the display
-    priceDisplay.textContent = `₱${minPrice.toLocaleString()} - ₱${maxPrice.toLocaleString()}`;
-}
-
-// Event listeners for slider changes
-minPriceSlider.addEventListener("input", updatePriceDisplay);
-maxPriceSlider.addEventListener("input", updatePriceDisplay);
-
-// Initial update
-updatePriceDisplay();
-
+        updatePriceDisplay(); // Initial display setup
     </script>
+
 @endsection
