@@ -27,13 +27,10 @@
     <link href="{{ asset('css/welcome.css') }}" rel="stylesheet">
     <link href="{{ asset('css/bespoke.css') }}" rel="stylesheet">
     <link href="{{ asset('css/our_house.css') }}" rel="stylesheet">
-<<<<<<< HEAD
     <link href="{{ asset('css/shop.css') }}" rel="stylesheet">
     <link href="{{ asset('css/giftcard.css') }}" rel="stylesheet">
-=======
     <link href="{{ asset('css/history.css') }}" rel="stylesheet">
 
->>>>>>> main
 
 </head>
 <body>
