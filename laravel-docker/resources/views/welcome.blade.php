@@ -210,7 +210,7 @@
             Cloth Selections Include
         </div>
         <div class="cloth-logos-wrapper">
-        <div class="logos" style="display: flex; justify-content: center; gap: 150px; flex-wrap: wrap;">
+        <div class="logos">
         <img style="max-height: 100px; object-fit: contain;" src="{{ asset('images/cloth/HollandSherry.png') }}" alt="Holland & Sherry Logo">
         <img style="max-height: 100px; object-fit: contain;" src="{{ asset('images/cloth/Placienza.png') }}" alt="Piacenza Logo">
         <img style="max-height: 100px; object-fit: contain;" src="{{ asset('images/cloth/Vitale.png') }}" alt="Vitale Barberis Logo">
@@ -219,8 +219,20 @@
         <img style="max-height: 100px; max-width: 150px; object-fit: contain;" src="{{ asset('images/cloth/Drapers.png') }}" alt="Drapers Logo">
         <img style="max-height: 100px; object-fit: contain;" src="{{ asset('images/cloth/NJB.png') }}" alt="NJB Trading Logo">
         </div>
-        
+
+        <div class="logos spacer"></div>
+
+        <div class="cloth-logos-wrapper">
+        <div class="logos">
+        <img style="max-height: 100px; object-fit: contain;" src="{{ asset('images/cloth/HollandSherry.png') }}" alt="Holland & Sherry Logo">
+        <img style="max-height: 100px; object-fit: contain;" src="{{ asset('images/cloth/Placienza.png') }}" alt="Piacenza Logo">
+        <img style="max-height: 100px; object-fit: contain;" src="{{ asset('images/cloth/Vitale.png') }}" alt="Vitale Barberis Logo">
+        <img style="max-height: 100px; object-fit: contain;" src="{{ asset('images/cloth/Paladino.jpg') }}" alt="Paladino Logo">
+        <img style="max-height: 100px; object-fit: contain;" src="{{ asset('images/cloth/FoxBrothers.png') }}" alt="Fox Brothers Logo">
+        <img style="max-height: 100px; max-width: 150px; object-fit: contain;" src="{{ asset('images/cloth/Drapers.png') }}" alt="Drapers Logo">
+        <img style="max-height: 100px; object-fit: contain;" src="{{ asset('images/cloth/NJB.png') }}" alt="NJB Trading Logo">
         </div>
+
     </div>
 </section>
 
