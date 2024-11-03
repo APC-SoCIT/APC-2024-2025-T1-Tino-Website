@@ -1,7 +1,7 @@
 <nav id="sidebar" class="sidebar js-sidebar">
 			<div class="sidebar-content js-simplebar">
-				<a class="sidebar-brand" href="#">
-          			<span class="align-middle">Tino</span>
+				<a class="sidebar-brand" href="{{ url('/dashboard') }}">
+          			<span class="align-middle">Admin Panel</span>
             	</a>
 
 				<ul class="sidebar-nav">
@@ -11,13 +11,13 @@
 					</li>
 
 					<li class="sidebar-item">
-						<a class="sidebar-link" href="#">
+						<a class="sidebar-link" href="{{ url('/dashboard') }}">
               				<i class="align-middle" data-feather="bar-chart-2"></i> <span class="align-middle">Dashboard</span>
             			</a>
 					</li>
 
 					<li class="sidebar-item">
-						<a class="sidebar-link" href="#">
+						<a class="sidebar-link" href="{{url('view_appointment')}}">
               				<i class="align-middle" data-feather="calendar"></i> <span class="align-middle">Appointment</span>
             			</a>
 					</li>

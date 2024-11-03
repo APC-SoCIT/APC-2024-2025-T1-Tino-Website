@@ -6,7 +6,7 @@
     <div class="container-fluid p-0">
         
         <!-- Page Title -->
-        <h1>View<strong> Products</strong></h1>
+        <h1 class="h3 mb-3" >View<strong> Products</strong></h1>
 
         <div class="card">
             <table class="table my-0">

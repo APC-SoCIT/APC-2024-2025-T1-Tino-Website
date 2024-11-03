@@ -13,17 +13,19 @@ return new class extends Migration
     {
         Schema::create('bookings', function (Blueprint $table) {
             $table->id();
-            $table->enum('appointment_type', ['FIRST MEETING', 'FITTING', 'CONSULTATION', 'PICK-UP', 'ATELIER VISIT']);
+            $table->enum('appointment_type', ['First Meeting', 'Consultation']); // Removed 'Made-To-Order Fittings'
             $table->date('date');
             $table->time('time');
             $table->string('first_name');
             $table->string('last_name');
             $table->string('country');
-            $table->string('phone');
-            $table->string('email');
-            $table->enum('preferred_channel', ['WhatsApp', 'Viber']);
+            $table->string('phone'); // Unique phone number
+            $table->string('email'); // Unique email
+            $table->string('preferred_channel')->nullable(); // Changed to string for future flexibility
+            $table->string('category_of_interest')->nullable(); // New column
             $table->integer('number_of_people');
-            $table->text('additional_info')->nullable(); // Nullable if not provided
+            $table->text('additional_info')->nullable()->limit(500); // Limit length
+            $table->enum('status', ['pending', 'confirmed', 'canceled'])->default('pending'); // Status tracking
             $table->timestamps();
         });
     }

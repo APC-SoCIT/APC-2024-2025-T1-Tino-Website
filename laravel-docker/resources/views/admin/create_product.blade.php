@@ -6,7 +6,7 @@
     <div class="container-fluid p-0">
         
         <!-- Page Title -->
-        <h1>Add<strong> Products</strong></h1>
+        <h1 class="h3 mb-3">Add<strong> Products</strong></h1>
         
         <!-- Card for Product Form -->
         <div class="card">
@@ -65,16 +65,15 @@
                         <div class="card-body">
                             <input type="file" name="images" multiple>
                         </div>
-                    </div>
-
+                    </div>         
+                </div>
                     <!-- Submit Button Positioned at the Bottom Right -->
                     
                     <div class="card-footer text-end">
                         <button type="submit" class="btn btn-primary btn-sm">Add Product</button>
                     </div>
                     
-                </form> <!-- End of Product Form -->
-            </div>
+            </form> <!-- End of Product Form -->
         </div>
     </div>
 </main>
