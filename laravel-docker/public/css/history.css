@@ -1,0 +1,133 @@
+/* Hero Section */
+.hero-section {
+    position: relative;
+    height: 500px;
+    background-image: url('/images/bespokeimg1.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.hero-text {
+    font-size: 80px;
+    color: #000;
+    font-weight: bold;
+    position: absolute;
+    z-index: 1;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    background-color: #FBFAF1;
+    padding: 20px 0;
+    margin: 0;
+    border: none;
+    box-shadow: none;
+    padding-left: 40px;
+}
+
+/* Timeline Section */
+.timeline-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 10px;
+    background-color: #FBFAF1;
+    position: relative;
+}
+
+.timeline-year h1 {
+    font-size: 60px;
+    font-weight: bold;
+    color: #5A3E36;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+/* Line under year */
+.line {
+    width: 2px;
+    height: 800px;
+    background-color: #5A3E36;
+    position: absolute;
+    top: 160px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.timeline-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    padding: 50px 0;
+}
+
+.timeline-left img {
+    width: 525px;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Right side: Adjusted Text Box */
+.timeline-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 450px;
+    margin-left: 30px;
+}
+
+.timeline-right h2 {
+    font-size: 40px;
+    font-weight: bold;
+    color: #5A3E36;
+    margin-bottom: 20px;
+}
+
+.timeline-right p {
+    font-size: 18px;
+    color: #7A7A7A;
+    line-height: 1.6;
+}
+
+/* Last Section Adjustments */
+.timeline-container.last {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    position: relative;
+}
+
+.timeline-container.last .line {
+    height: 660px;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.timeline-container.last .line::after {
+    content: '';
+    width: 15px;
+    height: 15px;
+    background-color: #5A3E36;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.timeline-container.last .timeline-left img {
+    margin-left: 50px;
+}
