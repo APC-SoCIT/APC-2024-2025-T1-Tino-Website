@@ -88,10 +88,9 @@
         </button>
       </div>
   </div>
-
-        <span class="pyjama-shirt-short-sleeves"
-          >Pyjama Shirt (Short Sleeves)</span
-        ><span class="pyjama-shirt-short-sleeves-17"
+        <a class="pyjama-shirt-short-sleeves" href="{{ route('product_details') }}"> Pyjama Shirt (Short Sleeves) </a>
+        <span class="pyjama-shirt-short-sleeves"> Pyjama Shirt (Short Sleeves)</span>
+        <span class="pyjama-shirt-short-sleeves-17"
           >Pyjama Shirt (Short Sleeves)</span
         ><span class="pyjama-shirt-short-sleeves-18"
           >Pyjama Shirt (Short Sleeves)</span

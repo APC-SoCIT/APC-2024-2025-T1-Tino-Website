@@ -31,6 +31,10 @@ Route::get('/shop/accessories', function () {
     return view('/shop/accessories');
 })->name('accessories');
 
+Route::get('/shop/product_details', function () {
+    return view('/shop/product_details');
+})->name('product_details');
+
 Route::get('/shop', function () {
     return view('shop');
 })->name('shop');
