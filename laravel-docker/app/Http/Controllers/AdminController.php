@@ -22,12 +22,19 @@ class AdminController extends Controller
 
     public function view_appointment()
     {
-        // Fetch all bookings
-        $bookings = Booking::all(); 
+        // Fetch all bookings and sort them
+        $bookings = Booking::orderByRaw("CASE 
+                                                WHEN status = 'pending' THEN 0 
+                                                WHEN status = 'confirmed' THEN 1 
+                                                ELSE 2 
+                                            END")
+                            ->orderBy('date', 'asc') // Sort by nearest date
+                            ->get();
 
         // Pass the bookings variable to the view
         return view('admin.view_appointment', compact('bookings'));
     }
+
     public function confirmBooking($id)
     {
         // Find the booking by ID
