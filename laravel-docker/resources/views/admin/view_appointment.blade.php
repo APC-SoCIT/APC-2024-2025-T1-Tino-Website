@@ -1,6 +1,9 @@
 @extends('admin/layouts.app')
 
 @section('content')
+
+@include('sweetalert::alert')
+
 <style>
      #calendar {
         max-width: 80%;

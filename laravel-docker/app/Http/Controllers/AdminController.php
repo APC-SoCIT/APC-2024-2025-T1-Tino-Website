@@ -28,6 +28,33 @@ class AdminController extends Controller
         // Pass the bookings variable to the view
         return view('admin.view_appointment', compact('bookings'));
     }
+    public function confirmBooking($id)
+    {
+        // Find the booking by ID
+        $booking = Booking::find($id);
+        if (!$booking) {
+            return redirect()->route('bookings')->with('error', 'Booking not found.');
+        }
+        
+        // Update booking status or perform any confirmation logic
+        $booking->status = 'confirmed'; // Example of updating the status
+        $booking->save();
+
+        Alert::success('Success!', 'You confirmed the appointment');
+        return redirect()->route('view_appointment');
+    }
+
+    public function declineBooking($id)
+    {
+        $booking = Booking::find($id);
+        if ($booking) {
+            $booking->status = 'canceled'; // Update status to declined
+            $booking->save();
+        }
+        
+        return redirect()->route('view_appointment')->with('success', 'Booking declined successfully!');
+    }
+
 
     public function create_product()
     {
@@ -54,7 +81,7 @@ class AdminController extends Controller
 
         $data ->save();
 
-        Alert::success('Success!', 'You added the product successfully');
+        Alert::success('Success!', 'You confirmed the appointment');
 
         return redirect()->back();
     }
@@ -96,6 +123,9 @@ class AdminController extends Controller
             $data->images=$imagename;
         }
         $data->save();
+
+        Alert::success('Success!', 'You updated the product successfully');
+
         return redirect('view_product');
     }
     public function adminDashboard()

@@ -50,8 +50,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/view_appointment', [AdminController::class, 'view_appointment'])->name('view_appointment');
     Route::get('/bookings', [BookingController::class, 'getBookings'])->name('bookings'); // Get all bookings for FullCalendar
     Route::get('/bookings/{id}', [BookingController::class, 'getBookingDetails'])->name('booking.details'); // Fetch details for a specific booking
-    Route::post('/confirm_booking/{id}', [BookingController::class, 'confirmBooking'])->name('confirm.booking');
-    Route::post('/decline_booking/{id}', [BookingController::class, 'declineBooking'])->name('decline.booking');
+    Route::post('/confirm_booking/{id}', [AdminController::class, 'confirmBooking'])->name('confirm.booking');
+    Route::post('/decline_booking/{id}', [AdminController::class, 'declineBooking'])->name('decline.booking');
 
     // Product Routes
     Route::get('/create_product', [AdminController::class, 'create_product'])->name('create.product');

@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
+
+@include('sweetalert::alert')
   <!-- Hero Section -->
   <section class="hero-section" style="background-image: url('{{ asset('images/welcome/hero.png') }}');">
       <div class="hero-content">
