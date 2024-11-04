@@ -54,8 +54,8 @@
               </div>
             @endfor
           </div>
-          <h6>Price: ₱1000 - ₱60000</h6>
-          <input class="form-range" max="60000" min="1000" type="range"/>
+          <h6>Price: ₱<span id="minPrice">1000</span> - ₱<span id="maxPrice">60000</span></h6>
+          <input id="priceRange" class="form-range" max="60000" min="1000" type="range" value="1000" step="500">
           <div class="form-check form-switch">
             <input class="form-check-input" id="onSale" type="checkbox"/>
             <label class="form-check-label" for="onSale">On Sale</label>
@@ -89,4 +89,15 @@
       </div>
     </div>
   </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const priceRange = document.getElementById('priceRange');
+      const minPrice = document.getElementById('minPrice');
+      
+      priceRange.addEventListener('input', function() {
+        minPrice.textContent = priceRange.value;
+      });
+    });
+  </script>
 @endsection
