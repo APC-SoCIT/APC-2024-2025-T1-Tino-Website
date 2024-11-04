@@ -1,0 +1,34 @@
+/* public/css/map.css */
+
+.appointment-button {
+    border: 1px solid #3D1515; /* Border color */
+    color: #3D1515;            /* Text color */
+    border-radius: 8px;        /* Rounded corners */
+    padding: 8px 16px;         /* Padding inside the button */
+    background-color: transparent; /* Transparent background */
+    font-size: 1rem;           /* Font size */
+    font-weight: normal;       /* Normal font weight */
+    text-align: center;        /* Center-align text */
+    text-decoration: none;     /* Remove underline */
+    display: inline-block;     /* Makes padding work as expected */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+.appointment-button:hover {
+    background-color: #3D1515; /* Background color on hover */
+    color: #fff;               /* Text color on hover */
+}
+
+.btn-link.get-directions {
+    color: #3D1515 !important;    /* Set the desired color */
+    font-weight: 600;             /* Semi-bold */
+    text-decoration: underline;   /* Ensure underline */
+    padding: 0;                   /* Remove extra padding */
+}
+
+#map {
+    width: 100%;            /* Full width of the container */
+    height: 500px;          /* Fixed height */
+    border: 2px solid #3D1515; /* Border color to match the left section */
+    border-radius: 8px;     /* Rounded corners for a clean look */
+}

@@ -164,16 +164,6 @@
                 <button class="schedule-btn">Schedule</button>
             </div>
 
-            <!-- Third Card -->
-            <div class="service-card third-card">
-                <div class="video-placeholder">
-                    <p>VIDEO CLIP</p>
-                    <span class="play-icon">▶</span>
-                </div>
-                <h4>Made-To-Order Fitting</h4>
-                <p>For existing clients who have a new order to fit or want to adjust an existing Tiño bespoke.</p>
-                <button class="schedule-btn">Schedule</button>
-            </div>
         </div>
     </div>
 </section>
@@ -210,17 +200,29 @@
             Cloth Selections Include
         </div>
         <div class="cloth-logos-wrapper">
-        <div class="logos" style="display: flex; justify-content: center; gap: 150px; flex-wrap: wrap;">
-        <img style="max-height: 100px; object-fit: contain;" src="{{ asset('images/cloth/HollandSherry.png') }}" alt="Holland & Sherry Logo">
-        <img style="max-height: 100px; object-fit: contain;" src="{{ asset('images/cloth/Placienza.png') }}" alt="Piacenza Logo">
-        <img style="max-height: 100px; object-fit: contain;" src="{{ asset('images/cloth/Vitale.png') }}" alt="Vitale Barberis Logo">
-        <img style="max-height: 100px; object-fit: contain;" src="{{ asset('images/cloth/Paladino.jpg') }}" alt="Paladino Logo">
-        <img style="max-height: 100px; object-fit: contain;" src="{{ asset('images/cloth/FoxBrothers.png') }}" alt="Fox Brothers Logo">
-        <img style="max-height: 100px; max-width: 150px; object-fit: contain;" src="{{ asset('images/cloth/Drapers.png') }}" alt="Drapers Logo">
-        <img style="max-height: 100px; object-fit: contain;" src="{{ asset('images/cloth/NJB.png') }}" alt="NJB Trading Logo">
+        <div class="logos">
+        <img src="{{ asset('images/cloth/HollandSherry.png') }}" alt="Holland & Sherry Logo">
+        <img src="{{ asset('images/cloth/Placienza.png') }}" alt="Piacenza Logo">
+        <img src="{{ asset('images/cloth/Vitale.png') }}" alt="Vitale Barberis Logo">
+        <img src="{{ asset('images/cloth/Paladino.jpg') }}" alt="Paladino Logo">
+        <img src="{{ asset('images/cloth/FoxBrothers.png') }}" alt="Fox Brothers Logo">
+        <img src="{{ asset('images/cloth/Drapers.png') }}" alt="Drapers Logo">
+        <img src="{{ asset('images/cloth/NJB.png') }}" alt="NJB Trading Logo">
         </div>
-        
+
+        <div class="logos spacer"></div>
+
+        <div class="cloth-logos-wrapper">
+        <div class="logos">
+        <img src="{{ asset('images/cloth/HollandSherry.png') }}" alt="Holland & Sherry Logo">
+        <img src="{{ asset('images/cloth/Placienza.png') }}" alt="Piacenza Logo">
+        <img src="{{ asset('images/cloth/Vitale.png') }}" alt="Vitale Barberis Logo">
+        <img src="{{ asset('images/cloth/Paladino.jpg') }}" alt="Paladino Logo">
+        <img src="{{ asset('images/cloth/FoxBrothers.png') }}" alt="Fox Brothers Logo">
+        <img src="{{ asset('images/cloth/Drapers.png') }}" alt="Drapers Logo">
+        <img src="{{ asset('images/cloth/NJB.png') }}" alt="NJB Trading Logo">
         </div>
+
     </div>
 </section>
 

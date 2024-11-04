@@ -3,49 +3,40 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\URL;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\AppointmentController;
+use App\Http\Controllers\BookingController;
+use App\Http\Controllers\ProductController;
 
 $url = config('app.url');
 URL::forceRootUrl($url);
 
 // Public Routes
 
-//main/welcome page
+// Main/welcome page
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
 Route::get('/bespoke', function () {
     return view('bespoke');
 })->name('bespoke');
 
-Route::get('/shop/shoes', function () {
-    return view('/shop/shoes');
-})->name('shoes');
+Route::prefix('shop')->group(function () {
+    Route::get('/', [ProductController::class, 'showShop'])->name('shop'); // Change this to use the controller
+    Route::get('/shoes', [ProductController::class, 'showShoes'])->name('shop.shoes'); 
+    Route::get('/jackets', [ProductController::class, 'showJackets'])->name('shop.jackets'); 
+    Route::get('/accessories', [ProductController::class, 'showAccessories'])->name('shop.accessories'); 
+    Route::get('/gift-cards', [ProductController::class, 'showGiftCards'])->name('shop.gift_cards');
+    Route::get('/product/{id}', [ProductController::class, 'show'])->name('product.details');
+});
 
-Route::get('/shop/jackets', function () {
-    return view('/shop/jackets');
-})->name('jackets');
-
-Route::get('/shop/accessories', function () {
-    return view('/shop/accessories');
-})->name('accessories');
-
-Route::get('/shop/product_details', function () {
-    return view('/shop/product_details');
-})->name('product_details');
-
-Route::get('/shop', function () {
-    return view('shop');
-})->name('shop');
-
-Route::get('/shop/giftcard', function () {
-    return view('/shop/giftcard');
-})->name('giftcard');
-
+// Other Routes
 Route::get('/our-house', function () {
     return view('our_house');
 })->name('our_house');
+
+Route::get('/map', function () {
+    return view('map');
+})->name('map');
 
 Route::get('/appointment', function () {
     return view('appointment');
@@ -57,17 +48,29 @@ Route::get('/history', function () {
 
 // Admin Routes with auth middleware applied
 Route::middleware(['auth', 'verified'])->group(function () {
-    Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
-    Route::get('/create_product', [AdminController::class, 'create_product']);
-    Route::post('/add_product', [AdminController::class, 'add_product']);
-    Route::get('/view_product', [AdminController::class, 'view_product']);
-    Route::get('/delete_product/{id}', [AdminController::class, 'delete_product']);
-    Route::get('/update_product/{id}', [AdminController::class, 'update_product']);
-    Route::post('/edit_product/{id}', [AdminController::class, 'edit_product']);
+    Route::get('/dashboard', [AdminController::class, 'adminDashboard'])->name('dashboard');
+    
+    // Appointment Routes
+    Route::get('/view_appointment', [AdminController::class, 'view_appointment'])->name('view_appointment');
+    Route::get('/bookings', [BookingController::class, 'getBookings'])->name('bookings'); // Get all bookings for FullCalendar
+    Route::get('/bookings/{id}', [BookingController::class, 'getBookingDetails'])->name('booking.details'); // Fetch details for a specific booking
+    Route::post('/confirm_booking/{id}', [AdminController::class, 'confirmBooking'])->name('confirm.booking');
+    Route::post('/decline_booking/{id}', [AdminController::class, 'declineBooking'])->name('decline.booking');
+
+    // Product Routes
+    Route::get('/create_product', [AdminController::class, 'create_product'])->name('create.product');
+    Route::post('/add_product', [AdminController::class, 'add_product'])->name('add.product');
+    Route::get('/view_product', [AdminController::class, 'view_product'])->name('view.product');
+    Route::get('/delete_product/{id}', [AdminController::class, 'delete_product'])->name('delete.product');
+    Route::get('/update_product/{id}', [AdminController::class, 'update_product'])->name('update.product');
+    Route::post('/edit_product/{id}', [AdminController::class, 'edit_product'])->name('edit.product');
 });
 
 // Booking Routes (no authentication required)
-Route::post('/add_booking/{id}', [AppointmentController::class, 'add_booking']);
+Route::post('add_booking', [BookingController::class, 'store'])->name('add_booking');
+
+
 
 // Authentication Routes
 require __DIR__.'/auth.php';
+

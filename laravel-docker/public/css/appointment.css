@@ -1,66 +1,4 @@
-.hero-image {
-    width: 100%;
-    max-height: 400px;
-    object-fit: cover;
-}
-
-.steps {
-    display: flex;
-    justify-content: space-around;
-    align-items: stretch; /* Stretch items to the same height */
-    margin-top: 1rem;
-    padding: 1rem 0;
-}
-
-.step {
-    color: #5a2d29;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center the number and text horizontally */
-    text-align: center; /* Center the text */
-    margin: 0 1rem; /* Add margin to step for spacing */
-}
-
-.step-number {
-    font-size: 1.2rem; /* Font size for numbers */
-    font-weight: bold;
-    width: 40px;       /* Width of the circles */
-    height: 40px;      /* Height of the circles */
-    line-height: 40px; /* Center number vertically */
-    border-radius: 50%;
-    background-color: #f4eae6;
-    color: #5a2d29;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 0.5rem; /* Space between number and text */
-}
-
-.step-text {
-    font-size: 1rem;
-    text-align: center; /* Center text */
-    line-height: 1.2;  /* Line height for spacing */
-    white-space: normal; /* Allow wrapping */
-    margin-top: 0.5rem; /* Margin to separate text from number */
-}
-
-.step.active .step-number {
-    background-color: #5a2d29;
-    color: #fff;
-}
-
-.step.active .step-text {
-    color: #5a2d29;
-}
-
-@media (max-width: 768px) {
-    .step {
-        flex: 1 1 30%; /* Allow the steps to shrink on smaller screens */
-        min-height: 100px; /* Optional: set a minimum height for the steps */
-    }
-}
-
+/* Keep your existing card and button styles */
 .card {
     border: 1px solid #ccc;
     margin-bottom: 20px;
@@ -78,71 +16,161 @@
 }
 .card-text {
     font-size: 0.9rem;
-    color: #666;
 }
 .btn-book {
-    background-color: #4b2b2b;
-    color: white;
+    background-color: #4b2e2a;
+    color: #fff;
     border: none;
-    padding: 5px 25px;
-    font-size: 0.9rem;
+    padding: 5px 15px;
+    cursor: pointer;
     align-self: flex-start; /* Align button to the top */
 }
-.calendar-container {
-    border: 1px solid #e0e0e0;
+
+/* Additional styles based on the provided HTML structure */
+.step-number, .step-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.step-number {
+    font-size: 48px;
+    font-weight: bold;
+    color: #333;
+}
+
+.step-description {
+    font-size: 16px;
+    color: #333;
+    margin-top: 10px;
+}
+.calendar-section {
+    margin-bottom: 20px;
+}
+
+.calendar-section {
+    margin-top: 20px;
+}
+
+.calendar {
+    border: 1px solid #ccc;
     border-radius: 5px;
     padding: 20px;
+    background-color: white;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #f8f5e9;
-    margin-top: 20px;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
 }
-.calendar {
-    text-align: center;
+
+#calendar {
+    border: none; /* Remove the border */
+    outline: none; /* Remove the outline on focus */
+    background-color: transparent; /* Make background transparent */
+    font-size: 16px; /* Adjust font size as needed */
+    color: #333; /* Text color */
+    padding: 10px 0; /* Adjust padding to fit your design */
+    width: auto; /* Allow the calendar to adjust its width */
+    margin: 0 auto; /* Center the input field */
+    text-align: center; /* Center the text */
 }
-.calendar h5 {
-    margin-bottom: 20px;
+
+.flatpickr-calendar {
+    left: 50% !important; /* Center the calendar */
+    transform: translateX(-50%); /* Adjust for width */
 }
+
 .time-slots {
-    text-align: center;
-}
-.time-slots h5 {
-    margin-bottom: 10px;
-}
-.time-slots p {
-    margin-bottom: 20px;
-    color: #6c757d;
-}
-.time-slot {
-    border: 1px solid #6c757d;
-    border-radius: 5px;
-    padding: 10px;
-    margin: 5px;
-    display: inline-block;
-    width: 80px;
-    text-align: center;
-    color: #6c757d;
-}
-.time-slots-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-wrap: wrap;
     gap: 10px;
-}
-.btn-view-all, .btn-continue {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
     margin-top: 20px;
 }
-.hidden {
-    display: none;
+
+.time-slot {
+    cursor: pointer;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
 }
-@media (max-width: 768px) {
-    .calendar-container {
-        flex-direction: column;
-    }
+
+.time-slot.selected {
+    background-color: #4b2b2b; /* Selected color */
+    color: white; /* Text color for contrast */
+}
+
+.time-slot:hover {
+    background-color: #f0f0f0; /* Light gray on hover */
+}
+
+.selectable-appointment {
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.selectable-appointment.selected {
+    background-color: #4b2b2b; /* Selected color */
+    color: white; /* Text color for contrast */
+}
+
+.selectable-appointment:hover {
+    background-color: #f0f0f0; /* Light gray on hover */
+}
+.selectable-appointment.selected:hover {
+    background-color: #4b2b2b; /* Keep the selected color */
+    color: white; /* Keep the text color for contrast */
+    cursor: default; /* Change cursor to default to indicate no action */
+}
+
+.form-container h5 {
+    margin-bottom: 20px;
+}
+
+.form-container .form-text {
+    font-size: 0.9em;
+    color: #6c757d;
+}
+.form-container .btn {
+    width: 100px;
+}
+.form-container .btn-cancel {
+    background-color: #f8f5f0;
+    color: #6c757d;
+    border: 1px solid #6c757d;
+}
+.form-container .btn-book {
+    background-color: #5a2d1a;
+    color: #fff;
+}
+.side-text {
+    font-size: 1.5em;
+    text-align: center;
+}
+.side-text .number {
+    font-size: 3em;
+    font-weight: bold;
+}
+.flag-select {
+    width: 100%; /* Full width for the input field */
+    max-width: 300px; /* Limit max width of the dropdown */
+    margin: 0 auto; /* Center align */
+}
+
+.flag-select .select-dropdown {
+    max-height: 300px; /* Limit height to avoid occupying the screen */
+    overflow-y: auto; /* Enable scrolling if content exceeds height */
+    border-radius: 4px; /* Rounded corners for aesthetics */
+}
+
+/* If you're using a specific class for the dropdown menu */
+.select2-container--default .select2-selection--single {
+    height: auto; /* Adjust height to content */
+    min-height: 40px; /* Minimum height for consistency */
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    line-height: 40px; /* Center the selected item vertically */
 }

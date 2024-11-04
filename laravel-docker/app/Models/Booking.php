@@ -19,6 +19,7 @@ class Booking extends Model
         'phone',
         'email',
         'preferred_channel',
+        'category_of_interest',
         'number_of_people',
         'additional_info',
     ];
