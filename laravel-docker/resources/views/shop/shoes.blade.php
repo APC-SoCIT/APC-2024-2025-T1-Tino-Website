@@ -70,20 +70,23 @@
       <div class="col-md-9">
         <div class="row">
           @foreach ($products as $product)
-                      <div class="col-md-4">
-                          <div class="card product-card">
-                              <img alt="Product image" class="card-img-top" src="{{ asset('product/' . $product->images) }}"/>
-                              <div class="card-body">
-                                  <h5 class="card-title">{{ $product->product_title }}</h5>
-                                  <p class="card-text">₱{{ number_format($product->price, 2) }}</p>
-                              </div>
+              <div class="col-md-4">
+                  <a href="{{ route('product.details', ['id' => $product->id]) }}" class="text-decoration-none"> <!-- Add link -->
+                      <div class="card product-card">
+                          <img class="card-img-top" src="{{ asset('product/' . $product->images) }}" alt="{{ $product->product_title }}"/>
+                          <div class="card-header" style="border-bottom: none;">
+                              <h5 class="card-title mb-0 text-start">{{ $product->product_title }}</h5>
+                          </div>
+                          <div class="card-body" style="padding: 0.5rem 1rem;">
+                              <p class="card-text price-text">₱{{ number_format($product->price, 2) }}</p>
                           </div>
                       </div>
-                  @endforeach
+                  </a> <!-- Closing link -->
               </div>
-        </div>
+          @endforeach
+      </div>
+
       </div>
     </div>
   </div>
-
 @endsection

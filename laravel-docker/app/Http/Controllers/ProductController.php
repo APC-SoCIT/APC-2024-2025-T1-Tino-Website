@@ -44,5 +44,12 @@ class ProductController extends Controller
         $products = Product::where('product_type', 'GIFT CARDS')->get();
         return view('shop.gift_cards', compact('products'));
     }
-
+    public function show($id)
+    {
+        // Find the product by ID
+        $product = Product::findOrFail($id); // Use findOrFail to handle not found cases
+        
+        // Return the product details view with the product data
+        return view('shop.product_details', compact('product'));
+    }
 }

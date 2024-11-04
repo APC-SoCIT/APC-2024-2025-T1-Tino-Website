@@ -26,9 +26,7 @@ Route::prefix('shop')->group(function () {
     Route::get('/jackets', [ProductController::class, 'showJackets'])->name('shop.jackets'); 
     Route::get('/accessories', [ProductController::class, 'showAccessories'])->name('shop.accessories'); 
     Route::get('/gift-cards', [ProductController::class, 'showGiftCards'])->name('shop.gift_cards');
-    Route::get('/product_details', function () {
-        return view('shop.product_details');
-    })->name('shop.product_details'); 
+    Route::get('/product/{id}', [ProductController::class, 'show'])->name('product.details');
 });
 
 // Other Routes
