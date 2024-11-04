@@ -164,16 +164,6 @@
                 <button class="schedule-btn">Schedule</button>
             </div>
 
-            <!-- Third Card -->
-            <div class="service-card third-card">
-                <div class="video-placeholder">
-                    <p>VIDEO CLIP</p>
-                    <span class="play-icon">▶</span>
-                </div>
-                <h4>Made-To-Order Fitting</h4>
-                <p>For existing clients who have a new order to fit or want to adjust an existing Tiño bespoke.</p>
-                <button class="schedule-btn">Schedule</button>
-            </div>
         </div>
     </div>
 </section>

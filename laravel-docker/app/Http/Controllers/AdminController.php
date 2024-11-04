@@ -115,8 +115,4 @@ class AdminController extends Controller
         // Pass the variables to the view
         return view('admin.dashboard', compact('plabels', 'pdata'));
     }
-
-
-
-
 }

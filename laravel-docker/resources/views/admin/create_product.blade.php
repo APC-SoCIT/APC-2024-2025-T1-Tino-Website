@@ -53,8 +53,9 @@
                             <select name="type" class="form-select mb-3" required>
                                 <option selected disabled>Select Product Type</option>
                                 <option value="SHOES">Shoes</option>
-                                <option value="JACKET">Jacket</option>
-                                <option value="LOUNGEWEAR">Loungewear</option>
+                                <option value="JACKETS">Jacket</option>
+                                <option value="ACCESSORIES">Accessories</option>
+                                <option value="GIFT CARDS">Gift Card</option>
                             </select>
                         </div>
 
