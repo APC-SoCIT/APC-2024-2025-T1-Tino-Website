@@ -10,6 +10,8 @@ use App\Models\Booking;
 
 use Illuminate\Support\Facades\DB;
 
+use Alert;
+
 
 class AdminController extends Controller
 {
@@ -51,6 +53,8 @@ class AdminController extends Controller
         }
 
         $data ->save();
+
+        Alert::success('Success!', 'You added the product successfully');
 
         return redirect()->back();
     }
