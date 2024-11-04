@@ -41,6 +41,7 @@
                 </ul>
                 <a href="https://www.google.com/maps/dir/?api=1&destination=Herco+Center,+114+Benavidez+Street,+Makati" target="_blank" class="btn btn-link p-0 get-directions">Get Directions</a>
                 <br>
+
                 <a href="{{ route('appointment') }}" class="appointment-button mt-3">Make an Appointment</a>
             </div>
         </div>
