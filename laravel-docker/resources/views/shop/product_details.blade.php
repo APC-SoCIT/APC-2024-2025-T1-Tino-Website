@@ -34,7 +34,7 @@
             <button>-</button>
             <span>1</span>
             <button>+</button>
-            <button class="add-to-cart">Add to Cart</button>
+            <button>Add to Cart</button>
         </div>
     </div>
 </div>
