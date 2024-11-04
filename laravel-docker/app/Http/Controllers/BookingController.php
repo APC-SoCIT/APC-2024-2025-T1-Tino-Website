@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Booking;
 use Illuminate\Http\Request;
-
+use Alert;
 class BookingController extends Controller
 {
     public function index(Request $request)
@@ -42,7 +42,7 @@ class BookingController extends Controller
             ->first();
 
         if ($existingBooking) {
-            return redirect()->back()->with('error', 'This time slot is already booked.');
+            return redirect()->route('appointment')->with('error', 'This time slot is already booked.');
         }
 
         // Store the validated data
@@ -55,37 +55,15 @@ class BookingController extends Controller
             'country' => $validatedData['country'],
             'phone' => $validatedData['phone'],
             'email' => $validatedData['email'],
-            'preferred_channel' => implode(',', $validatedData['preferred_channel'] ?? []), // Convert array to string
-            'category_of_interest' => implode(',', $validatedData['category_of_interest'] ?? []), // Convert array to string
+            'preferred_channel' => implode(',', $validatedData['preferred_channel'] ?? []),
+            'category_of_interest' => implode(',', $validatedData['category_of_interest'] ?? []),
             'number_of_people' => $validatedData['number_of_people'],
             'additional_info' => $validatedData['additional_info'],
         ]);
 
-        // Redirect or return response
-        return redirect()->back()->with('success', 'Booking added successfully!');
-    }
+        Alert::success('Appointment sent!', 'Remember to check your email for confirmation.');
 
-    public function confirmBooking($id)
-    {
-        $booking = Booking::find($id);
-        if ($booking) {
-            $booking->status = 'confirmed'; // Update status to confirmed
-            $booking->save();
-        }
-        
-        return redirect()->back();
-    }
-
-
-    public function declineBooking($id)
-    {
-        $booking = Booking::find($id);
-        if ($booking) {
-            $booking->status = 'canceled'; // Update status to declined
-            $booking->save();
-        }
-        
-        return redirect()->back()->with('success', 'Booking declined successfully!');
+        return redirect()->route('shop');
     }
     
     public function getBookings()

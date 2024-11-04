@@ -2,6 +2,8 @@
 
 @section('content')
 
+@include('sweetalert::alert')
+
 <main class="content">
     <div class="container-fluid p-0">
         

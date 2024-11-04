@@ -32,7 +32,7 @@
                             <i data-feather="eye"></i></a>
                         <a href="{{url('update_product', $product->id)}}" class="btn btn-primary btn-sm">
                             <i data-feather="edit"></i></a>
-                        <a href="{{url('delete_product', $product->id)}}" class="btn btn-danger btn-sm">
+                        <a href="{{url('delete_product', $product->id)}}" class="btn btn-danger btn-sm" onclick="confirmation(event)">
                             <i data-feather="trash"></i></a>
                     </td>   
                 </tr>
@@ -43,7 +43,10 @@
 </main>
 @endsection
 
-<!-- <script type="text/javascript">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" 
+integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" 
+crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script type="text/javascript">
 
     function confirmation(ev) 
     {
@@ -64,4 +67,4 @@
                  }
         });
     }
-</script> -->
+</script>

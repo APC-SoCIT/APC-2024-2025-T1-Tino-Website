@@ -26,9 +26,7 @@ Route::prefix('shop')->group(function () {
     Route::get('/jackets', [ProductController::class, 'showJackets'])->name('shop.jackets'); 
     Route::get('/accessories', [ProductController::class, 'showAccessories'])->name('shop.accessories'); 
     Route::get('/gift-cards', [ProductController::class, 'showGiftCards'])->name('shop.gift_cards');
-    Route::get('/product_details', function () {
-        return view('shop.product_details');
-    })->name('shop.product_details'); 
+    Route::get('/product/{id}', [ProductController::class, 'show'])->name('product.details');
 });
 
 // Other Routes
@@ -52,8 +50,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/view_appointment', [AdminController::class, 'view_appointment'])->name('view_appointment');
     Route::get('/bookings', [BookingController::class, 'getBookings'])->name('bookings'); // Get all bookings for FullCalendar
     Route::get('/bookings/{id}', [BookingController::class, 'getBookingDetails'])->name('booking.details'); // Fetch details for a specific booking
-    Route::post('/confirm_booking/{id}', [BookingController::class, 'confirmBooking'])->name('confirm.booking');
-    Route::post('/decline_booking/{id}', [BookingController::class, 'declineBooking'])->name('decline.booking');
+    Route::post('/confirm_booking/{id}', [AdminController::class, 'confirmBooking'])->name('confirm.booking');
+    Route::post('/decline_booking/{id}', [AdminController::class, 'declineBooking'])->name('decline.booking');
 
     // Product Routes
     Route::get('/create_product', [AdminController::class, 'create_product'])->name('create.product');
