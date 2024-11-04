@@ -79,30 +79,4 @@
     </div>
 </main>
 
-@if (session('success'))
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            Swal.fire({
-                icon: 'success',
-                title: 'Success!',
-                text: '{{ session('success') }}',
-                confirmButtonColor: '#3085d6',
-                confirmButtonText: 'OK'
-            });
-        });
-
-        Swal.fire({
-            icon: 'success',
-            title: 'Product Added!',
-            text: 'Your new product has been added to the shop successfully.',
-            confirmButtonColor: '#3085d6',
-            confirmButtonText: 'Great!'
-        });
-
-    </script>
-@endif
-
-<!-- SweetAlert JS -->
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
 @endsection
