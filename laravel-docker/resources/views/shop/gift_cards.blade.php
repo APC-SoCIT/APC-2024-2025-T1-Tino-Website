@@ -13,12 +13,28 @@
 
     <!-- Hero Section End -->
 
-    <div class="rectangle-69">
-  <a class="text-item" href="{{ route('shoes') }}">Shoes</a>
-  <a class="text-item" href="{{ route('jackets') }}">Safari Jackets</a>
-  <a class="text-item" href="{{ route('giftcard') }}">Gift Cards</a>
-  <a class="text-item" href="{{ route('accessories') }}">Accessories</a>
+     <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <div class="navbar-collapse">
+        <ul class="navbar-nav justify-content-between w-100">
+        <li class="nav-item">
+            <a class="nav-link" href="{{ route('shop.shoes') }}">Shoes</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{ route('shop.jackets') }}">Safari Jackets</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{ route('shop.gift_cards') }}">Gift Cards</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{ route('shop.accessories') }}">Accessories</a>
+        </li>
+        </ul>
+      </div>
     </div>
+  </nav>
+  
       <div class="flex-row">
       <a class="image" href="#">
             <img alt="TIÑO logo" src="{{ asset('images/shop/olpianaandres.png') }}"/>
