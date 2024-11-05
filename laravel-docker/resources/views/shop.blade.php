@@ -109,4 +109,4 @@
       });
     });
   </script>
-git merge main@endsection
+@endsection
