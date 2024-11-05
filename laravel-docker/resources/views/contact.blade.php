@@ -15,8 +15,8 @@
     <!-- Breadcrumb -->
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item">Our House</li>
-            <li class="breadcrumb-item active" aria-current="page">Articles</li>
+            <li class="breadcrumb-item"><a href="{{ route('our_house') }}">Our House</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Contact</li>
         </ol>
     </nav>
 
