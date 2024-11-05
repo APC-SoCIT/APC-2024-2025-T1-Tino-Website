@@ -88,7 +88,8 @@ class AdminController extends Controller
 
         $data ->save();
 
-        Alert::success('Success!', 'You confirmed the appointment');
+        Alert::success('Success!', 'You added a product.
+        ');
 
         return redirect()->back();
     }

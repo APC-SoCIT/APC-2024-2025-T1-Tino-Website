@@ -52,13 +52,13 @@
     <div class="hero-content">
         <h1>Where Quality Counts.</h1>
         <p>Quality can only be achieved by using good materials. We use the best at every step: fabric, lining, and threads.</p>
-        <button class="btn btn-discover">Discover Bespoke</button>
+        <a href="{{ route('bespoke') }}" class="btn btn-discover">Discover Bespoke</a>
     </div>
 </section>
 
     <!-- Hero Section End -->
 
- <!-- New Product Section -->
+  <!-- New Product Section -->
 <section class="product-section">
     <div class="container-fluid">
         <div class="row">
@@ -66,26 +66,27 @@
             <div class="col-md-4">
                 <div class="product-card">
                     <img src="{{ asset('images/welcome/shoe.png') }}" alt="A pair of brown suede loafers">
-                    <button>Explore Shoes</button>
+                    <button class="btn btn-explore" onclick="window.location.href='{{ url('/shop') }}'">Explore Shoes</button>
                 </div>
             </div>
             <!-- Product 2: Safari Jackets -->
             <div class="col-md-4">
                 <div class="product-card">
                     <img src="{{ asset('images/welcome/shoe.png') }}" alt="A classic safari jacket">
-                    <button>Explore Safari Jackets</button>
+                    <button class="btn btn-explore" onclick="window.location.href='{{ url('/shop') }}'">Explore Jackets</button>
                 </div>
             </div>
             <!-- Product 3: Cufflinks -->
             <div class="col-md-4">
                 <div class="product-card">
                     <img src="{{ asset('images/welcome/shoe.png') }}" alt="Elegant silver cufflinks">
-                    <button>Explore Cufflinks</button>
+                    <button class="btn btn-explore" onclick="window.location.href='{{ url('/shop') }}'">Explore Cufflinks</button>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
 
 <!-- Video Clip Section -->
 <section class="video-section">
