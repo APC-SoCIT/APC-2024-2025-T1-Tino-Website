@@ -1,3 +1,4 @@
+@media (max-width: 768px) {
 /* Prevent Horizontal Scroll */
 body {
     overflow-x: hidden;
@@ -401,4 +402,6 @@ body {
     max-width: 100px;
     object-fit: contain;
     margin-right: 20px; /* Adjust spacing as needed */
+}
+
 }
