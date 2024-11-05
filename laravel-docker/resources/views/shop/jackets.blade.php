@@ -42,28 +42,37 @@
           <select class="form-select">
             <option selected="">Sort By</option>
           </select>
+          <div class="color-picker-container">
           <h6>Color</h6>
-          <div class="d-flex flex-wrap mb-3">
-            <!-- Color Filters -->
-            @for ($i = 1; $i <= 6; $i++)
-              <div class="form-check me-2">
-                <input class="form-check-input" id="color{{ $i }}" name="color" type="radio"/>
-                <label class="form-check-label" for="color{{ $i }}">
-                  <span class="badge bg-{{ ['primary', 'success', 'danger', 'warning', 'dark', 'light border'][$i - 1] }}"></span>
-                </label>
-              </div>
-            @endfor
-          </div>
-          <h6>Price: ₱<span id="minPrice">1000</span> - ₱<span id="maxPrice">60000</span></h6>
-          <input id="priceRange" class="form-range" max="60000" min="1000" type="range" value="1000" step="500">
-          <div class="form-check form-switch">
-            <input class="form-check-input" id="onSale" type="checkbox"/>
-            <label class="form-check-label" for="onSale">On Sale</label>
-          </div>
-          <div class="form-check form-switch">
-            <input class="form-check-input" id="inStock" type="checkbox"/>
-            <label class="form-check-label" for="inStock">In Stock</label>
-          </div>
+          <div class="color-buttons">
+        <div class="color-button color-gold"></div>
+        <div class="color-button color-blue"></div>
+        <div class="color-button color-brown"></div>
+        <div class="color-button color-red"></div>
+        <div class="color-button color-darkblue"></div>
+        <div class="color-button color-olive"></div>
+        <div class="color-button color-pink"></div>
+        <div class="color-button color-beige"></div>
+        <div class="color-button color-black"></div>
+    </div>
+</div>
+<div class="filter-container">
+    <!-- Price Range -->
+    <h6 class="price-label">Price: ₱<span id="minPrice">1000</span> - ₱<span id="maxPrice">60000</span></h6>
+    <input id="priceRange" class="form-range" max="60000" min="1000" type="range" value="1000" step="500">
+    
+    <!-- On Sale Toggle -->
+    <div class="form-check form-switch">
+        <input class="form-check-input" id="onSale" type="checkbox"/>
+        <label class="form-check-label" for="onSale">On Sale</label>
+    </div>
+    
+    <!-- In Stock Toggle -->
+    <div class="form-check form-switch">
+        <input class="form-check-input" id="inStock" type="checkbox"/>
+        <label class="form-check-label" for="inStock">In Stock</label>
+    </div>
+</div>
           <button class="btn mt-3">Gift Cards</button>
         </div>
       </div>
