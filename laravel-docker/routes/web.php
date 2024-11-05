@@ -58,6 +58,10 @@ Route::get('/gallery', function () {
     return view('gallery'); // points to resources/views/contact.blade.php
 })->name('gallery');
 
+Route::get('/article', function () {
+    return view('article');
+})->name('article');
+
 
 
 // Admin Routes with auth middleware applied

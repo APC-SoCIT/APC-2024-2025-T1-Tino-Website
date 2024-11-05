@@ -36,33 +36,33 @@
     <!-- TWO -->
 
     <div class="image-two">
-        <div class="image-text-overlay"></div>
+        <div class="image-text-overlay">About Us</div>
     </div>
 
     <div class="button-and-line">
-        <a href="{{ route('appointment') }}" class="learn-more-button">Learn More</a>
+        <a href="{{ route('about') }}" class="learn-more-button">Learn More</a>
         <hr class="divider-line" />
     </div>
 
     <!-- THREE -->
 
     <div class="image-three">
-        <div class="image-text-overlay"></div>
+        <div class="image-text-overlay">Article</div>
     </div>
 
     <div class="button-and-line">
-        <a href="{{ route('appointment') }}" class="learn-more-button">Learn More</a>
+        <a href="{{ route('article') }}" class="learn-more-button">Learn More</a>
         <hr class="divider-line" />
     </div>
 
     <!-- FOUR -->
 
     <div class="image-four">
-        <div class="image-text-overlay"></div>
+        <div class="image-text-overlay">Map</div>
     </div>
 
     <div class="button-and-line">
-        <a href="{{ route('appointment') }}" class="learn-more-button">Learn More</a>
+        <a href="{{ route('map') }}" class="learn-more-button">Learn More</a>
         <hr class="divider-line" />
     </div>
 
