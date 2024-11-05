@@ -46,6 +46,20 @@ Route::get('/history', function () {
     return view('history');
 })->name('history');
 
+Route::get('/contact', function () {
+    return view('contact'); // points to resources/views/contact.blade.php
+})->name('contact');
+
+Route::get('/about', function () {
+    return view('about'); // points to resources/views/contact.blade.php
+})->name('about');
+
+Route::get('/gallery', function () {
+    return view('gallery'); // points to resources/views/contact.blade.php
+})->name('gallery');
+
+
+
 // Admin Routes with auth middleware applied
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', [AdminController::class, 'adminDashboard'])->name('dashboard');

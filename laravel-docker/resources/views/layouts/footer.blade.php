@@ -6,9 +6,9 @@
 
 <footer>
    <div>
-    <a href="#">About</a>
-    <a href="#">Gallery</a>
-    <a href="#">Contact</a>
+    <a href="{{ route('about') }}">About</a>
+    <a href="{{ route('gallery') }}">Gallery</a>
+    <a href="{{ route('contact') }}">Contact</a>
     <a href="{{ route('map') }}">Map</a>
    </div>
 
