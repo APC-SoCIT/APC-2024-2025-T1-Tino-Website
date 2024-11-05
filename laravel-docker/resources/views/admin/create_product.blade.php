@@ -2,11 +2,13 @@
 
 @section('content')
 
+@include('sweetalert::alert')
+
 <main class="content">
     <div class="container-fluid p-0">
         
         <!-- Page Title -->
-        <h1>Add<strong> Products</strong></h1>
+        <h1 class="h3 mb-3">Add<strong> Products</strong></h1>
         
         <!-- Card for Product Form -->
         <div class="card">
@@ -53,8 +55,9 @@
                             <select name="type" class="form-select mb-3" required>
                                 <option selected disabled>Select Product Type</option>
                                 <option value="SHOES">Shoes</option>
-                                <option value="JACKET">Jacket</option>
-                                <option value="LOUNGEWEAR">Loungewear</option>
+                                <option value="JACKETS">Jacket</option>
+                                <option value="ACCESSORIES">Accessories</option>
+                                <option value="GIFT CARDS">Gift Card</option>
                             </select>
                         </div>
 
@@ -65,16 +68,15 @@
                         <div class="card-body">
                             <input type="file" name="images" multiple>
                         </div>
-                    </div>
-
+                    </div>         
+                </div>
                     <!-- Submit Button Positioned at the Bottom Right -->
                     
                     <div class="card-footer text-end">
                         <button type="submit" class="btn btn-primary btn-sm">Add Product</button>
                     </div>
                     
-                </form> <!-- End of Product Form -->
-            </div>
+            </form> <!-- End of Product Form -->
         </div>
     </div>
 </main>

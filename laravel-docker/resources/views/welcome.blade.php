@@ -52,13 +52,13 @@
     <div class="hero-content">
         <h1>Where Quality Counts.</h1>
         <p>Quality can only be achieved by using good materials. We use the best at every step: fabric, lining, and threads.</p>
-        <button class="btn btn-discover">Discover Bespoke</button>
+        <a href="{{ route('bespoke') }}" class="btn btn-discover">Discover Bespoke</a>
     </div>
 </section>
 
     <!-- Hero Section End -->
 
- <!-- New Product Section -->
+  <!-- New Product Section -->
 <section class="product-section">
     <div class="container-fluid">
         <div class="row">
@@ -66,26 +66,27 @@
             <div class="col-md-4">
                 <div class="product-card">
                     <img src="{{ asset('images/welcome/shoe.png') }}" alt="A pair of brown suede loafers">
-                    <button>Explore Shoes</button>
+                    <button class="btn btn-explore" onclick="window.location.href='{{ url('/shop') }}'">Explore Shoes</button>
                 </div>
             </div>
             <!-- Product 2: Safari Jackets -->
             <div class="col-md-4">
                 <div class="product-card">
                     <img src="{{ asset('images/welcome/shoe.png') }}" alt="A classic safari jacket">
-                    <button>Explore Safari Jackets</button>
+                    <button class="btn btn-explore" onclick="window.location.href='{{ url('/shop') }}'">Explore Jackets</button>
                 </div>
             </div>
             <!-- Product 3: Cufflinks -->
             <div class="col-md-4">
                 <div class="product-card">
                     <img src="{{ asset('images/welcome/shoe.png') }}" alt="Elegant silver cufflinks">
-                    <button>Explore Cufflinks</button>
+                    <button class="btn btn-explore" onclick="window.location.href='{{ url('/shop') }}'">Explore Cufflinks</button>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
 
 <!-- Video Clip Section -->
 <section class="video-section">
@@ -164,16 +165,6 @@
                 <button class="schedule-btn">Schedule</button>
             </div>
 
-            <!-- Third Card -->
-            <div class="service-card third-card">
-                <div class="video-placeholder">
-                    <p>VIDEO CLIP</p>
-                    <span class="play-icon">▶</span>
-                </div>
-                <h4>Made-To-Order Fitting</h4>
-                <p>For existing clients who have a new order to fit or want to adjust an existing Tiño bespoke.</p>
-                <button class="schedule-btn">Schedule</button>
-            </div>
         </div>
     </div>
 </section>
@@ -210,16 +201,29 @@
             Cloth Selections Include
         </div>
         <div class="cloth-logos-wrapper">
-        <div class="cloth-logos" style="display: flex; justify-content: center; gap: 150px; flex-wrap: wrap;">
-        <img style="max-height: 100px; object-fit: contain;" src="{{ asset('images/cloth/HollandSherry.png') }}" alt="Holland & Sherry Logo">
-        <img style="max-height: 100px; object-fit: contain;" src="{{ asset('images/cloth/Placienza.png') }}" alt="Piacenza Logo">
-        <img style="max-height: 100px; object-fit: contain;" src="{{ asset('images/cloth/Vitale.png') }}" alt="Vitale Barberis Logo">
-        <img style="max-height: 100px; object-fit: contain;" src="{{ asset('images/cloth/Paladino.jpg') }}" alt="Paladino Logo">
-        <img style="max-height: 100px; object-fit: contain;" src="{{ asset('images/cloth/FoxBrothers.png') }}" alt="Fox Brothers Logo">
-        <img style="max-height: 100px; max-width: 150px; object-fit: contain;" src="{{ asset('images/cloth/Drapers.png') }}" alt="Drapers Logo">
-        <img style="max-height: 100px; object-fit: contain;" src="{{ asset('images/cloth/NJB.png') }}" alt="NJB Trading Logo">
-            </div>
+        <div class="logos">
+        <img src="{{ asset('images/cloth/HollandSherry.png') }}" alt="Holland & Sherry Logo">
+        <img src="{{ asset('images/cloth/Placienza.png') }}" alt="Piacenza Logo">
+        <img src="{{ asset('images/cloth/Vitale.png') }}" alt="Vitale Barberis Logo">
+        <img src="{{ asset('images/cloth/Paladino.jpg') }}" alt="Paladino Logo">
+        <img src="{{ asset('images/cloth/FoxBrothers.png') }}" alt="Fox Brothers Logo">
+        <img src="{{ asset('images/cloth/Drapers.png') }}" alt="Drapers Logo">
+        <img src="{{ asset('images/cloth/NJB.png') }}" alt="NJB Trading Logo">
         </div>
+
+        <div class="logos spacer"></div>
+
+        <div class="cloth-logos-wrapper">
+        <div class="logos">
+        <img src="{{ asset('images/cloth/HollandSherry.png') }}" alt="Holland & Sherry Logo">
+        <img src="{{ asset('images/cloth/Placienza.png') }}" alt="Piacenza Logo">
+        <img src="{{ asset('images/cloth/Vitale.png') }}" alt="Vitale Barberis Logo">
+        <img src="{{ asset('images/cloth/Paladino.jpg') }}" alt="Paladino Logo">
+        <img src="{{ asset('images/cloth/FoxBrothers.png') }}" alt="Fox Brothers Logo">
+        <img src="{{ asset('images/cloth/Drapers.png') }}" alt="Drapers Logo">
+        <img src="{{ asset('images/cloth/NJB.png') }}" alt="NJB Trading Logo">
+        </div>
+
     </div>
 </section>
 

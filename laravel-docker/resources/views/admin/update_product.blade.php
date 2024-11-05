@@ -6,7 +6,7 @@
     <div class="container-fluid p-0">
         
         <!-- Page Title -->
-        <h1>Update<strong> Product</strong></h1>
+        <h1 class="h3 mb-3">Update<strong> Product</strong></h1>
         
         <!-- Card for Product Form -->
         <div class="card">
@@ -52,13 +52,12 @@
                             <h5 class="card-title mb-0">Product Type</h5>
                         </div>
                         <div class="card-body">
-                            <!-- Populate dropdown with current product type -->
                             <select name="type" class="form-select mb-3" required>
-                                <!-- Current type as selected -->
-                                <option value="{{ $products->product_type }}" selected>{{ $products->product_type }}</option>
+                                <option selected disabled>Select Product Type</option>
                                 <option value="SHOES">Shoes</option>
-                                <option value="JACKET">Jacket</option>
-                                <option value="LOUNGEWEAR">Loungewear</option>
+                                <option value="JACKETS">Jacket</option>
+                                <option value="ACCESSORIES">Accessories</option>
+                                <option value="GIFT CARDS">Gift Card</option>
                             </select>
                         </div>
 

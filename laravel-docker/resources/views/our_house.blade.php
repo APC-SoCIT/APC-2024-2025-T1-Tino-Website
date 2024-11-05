@@ -4,7 +4,7 @@
 <body>
     <!-- Hero Section (Original) -->
     <div class="hero-section">
-        <div class="hero-text">PHOTO</div>
+        <div class="hero-text"></div>
     </div>
 
     <!-- Breadcrumb (Original) -->
@@ -36,7 +36,7 @@
     <!-- About Us -->
 
     <div class="image-two">
-        <div class="image-text-overlay">About Us</div>
+        <div class="image-text-overlay">PHOTO</div>
     </div>
 
     <div class="button-and-line">
@@ -47,7 +47,7 @@
     <!-- Article< -->
 
     <div class="image-three">
-        <div class="image-text-overlay">Article</div>
+        <div class="image-text-overlay">PHOTO</div>
     </div>
 
     <div class="button-and-line">
@@ -58,7 +58,7 @@
     <!-- Map -->
 
     <div class="image-four">
-        <div class="image-text-overlay">Map</div>
+        <div class="image-text-overlay">PHOTO</div>
     </div>
 
     <div class="button-and-line">

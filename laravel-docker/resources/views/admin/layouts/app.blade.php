@@ -24,6 +24,7 @@
 	<!-- custom css -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
+
 </head>
 
 <body>
@@ -43,7 +44,7 @@
         
 	</div>
     
-    <!-- @yield('scripts') -->
+    @yield('scripts')
 	<script src="admin/js/app.js"></script>
 
 </body>

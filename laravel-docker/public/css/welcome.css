@@ -27,10 +27,11 @@
   }
   
   .btn-discover {
-    background-color: #800000;
-    color: white;
+    background-color: #4b2e2a;
+    color: #fff;
     border: none;
-    padding: 0.75rem 1.5rem;
+    padding: 5px 15px;
+    cursor: pointer;
     font-size: 1rem;
     border-radius: 0;
     transition: background-color 0.3s ease;
@@ -40,7 +41,7 @@
     background-color: #660000;
   }
   
-  /* Product Section */
+   /* Product Section */
 .product-section {
     padding: 20px 0; /* Reduce the padding from 50px to 20px to bring the sections closer */
     background-color: #f5f0e6; /* Ensure consistent background color */
@@ -78,6 +79,8 @@
     background-color: #5a3e36;
     color: white;
 }
+  
+  
   
   /* Video Section */
 .video-section {
@@ -235,13 +238,6 @@
     text-decoration: underline;
 }
 
-.service-cards {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 40px;
-    gap: 20px;
-}
-
 /* Increased width for each card to make the container larger */
 /* .first-card {
     width: 32%; 
@@ -256,9 +252,16 @@
     width: 30%; 
 } */
 
+.service-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Controls space between cards */
+    padding: 0; /* Removes the extra padding around the container */
+}
+
 .service-card {
-    width: 32%; /* Keep the width of each card */
-    margin-left: 3px; /* Add space between the cards */
+    flex: 1 1 300px; /* Adjusts width and allows wrapping on smaller screens */
+    max-width: 320px; /* Limits the maximum width of each card */
     text-align: center;
     padding: 30px;
     background-color: #fff;
