@@ -45,3 +45,76 @@
   margin-top: 5px; /* Space above the price */
   text-align: left; /* Left align the price text */
 }
+.color-picker-container {
+  display: block;
+  padding: .375rem 2.25rem .375rem .75rem;
+  border: var(--bs-border-width) solid var(--bs-border-color);
+  border-radius: var(--bs-border-radius);
+  background-color: #f8f5f2;
+  font-family: Arial, sans-serif;
+  color: #3d2c29;
+  appearance: none;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+/* Title styling */
+.color-picker-container h4 {
+  margin: 0;
+  padding-bottom: 8px;
+  font-size: 16px;
+}
+
+/* Color button grid styling */
+.color-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* Individual color button styling */
+.color-button {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 1px solid #3d2c29;
+  margin: 5px;
+}
+.product-details h6 {
+  clear: both; /* Ensure the price is below the color buttons */
+}
+.filter-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+.form-range {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+/* Checkbox switches styling */
+.form-check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.form-check + .form-check {
+  margin-top: 10px; /* Adds space between On Sale and In Stock */
+}
+
+/* Color button colors */
+.color-gold { background-color: #a3945a; }
+.color-blue { background-color: #0000ff; }
+.color-brown { background-color: #5d4037; }
+.color-red { background-color: #b71c1c; }
+.color-darkblue { background-color: #0d47a1; }
+.color-olive { background-color: #827717; }
+.color-pink { background-color: #ffcdd2; }
+.color-beige { background-color: #d2b48c; }
+.color-black { background-color: #212121; }

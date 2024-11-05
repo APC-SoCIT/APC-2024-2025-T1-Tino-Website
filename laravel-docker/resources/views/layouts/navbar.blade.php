@@ -27,7 +27,10 @@
                 <a class="nav-link navbar-icons" href="#"><i class="fas fa-shopping-bag"></i></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navbar-icons" href="#"><i class="fas fa-search"></i></a>
+            <a class="nav-link navbar-icons" href="#" onclick="toggleSearch()">
+        <i class="fas fa-search"></i>
+    </a>
+    <input type="text" id="searchInput" class="search-input" placeholder="Search..." style="display: none;">
             </li>
         </ul>
     </div>
@@ -55,3 +58,15 @@
         </ul>
     </div>
 </div>
+
+<script>
+    function toggleSearch() {
+        var searchInput = document.getElementById("searchInput");
+        if (searchInput.style.display === "none") {
+            searchInput.style.display = "inline-block";
+            searchInput.focus();
+        } else {
+            searchInput.style.display = "none";
+        }
+    }
+</script>
