@@ -1,0 +1,80 @@
+body {
+    background-color: #f5f0e6;
+    color: #333;
+}
+
+.about-section {
+    padding: 60px 15px;
+    font-family: Arial, sans-serif;
+}
+
+.title-placeholder {
+    background-color: #e6dac8;
+    text-align: center;
+    padding: 50px 0;
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.breadcrumb-nav {
+    margin-bottom: 30px;
+}
+
+.breadcrumb a {
+    color: #4b0000;
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+/* Content Grid */
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.grid-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Text Content Styling */
+.text-content {
+    background-color: #f0e6dc; /* Light beige for all text sections */
+    padding: 20px;
+    color: #4b0000;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.text-content h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #4b0000;
+}
+
+.text-content h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.text-content p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+}
