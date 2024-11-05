@@ -11,10 +11,17 @@
     color: #333;
     margin-right: 1.5rem;
 }
-
 .nav-link:hover {
     color: #000;
 }
+.search-input {
+    width: 150px;
+    padding: 5px;
+     margin-left: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    }
 .navbar-icons {
     font-size: 1.2rem;
     color: #333;
