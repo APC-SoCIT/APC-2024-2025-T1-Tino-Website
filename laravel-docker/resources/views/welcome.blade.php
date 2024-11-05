@@ -19,6 +19,12 @@
         .navbar.scrolled .navbar-brand img {
             color: #333 !important;
             filter: brightness(1) invert(0);
+
+            /* Prevent Horizontal Scroll */
+body {
+    overflow-x: hidden !important;
+}
+
 }
         
         .nav-link {
@@ -200,19 +206,6 @@
         <div class="featured-in">
             Cloth Selections Include
         </div>
-        <div class="cloth-logos-wrapper">
-        <div class="logos">
-        <img src="{{ asset('images/cloth/HollandSherry.png') }}" alt="Holland & Sherry Logo">
-        <img src="{{ asset('images/cloth/Placienza.png') }}" alt="Piacenza Logo">
-        <img src="{{ asset('images/cloth/Vitale.png') }}" alt="Vitale Barberis Logo">
-        <img src="{{ asset('images/cloth/Paladino.jpg') }}" alt="Paladino Logo">
-        <img src="{{ asset('images/cloth/FoxBrothers.png') }}" alt="Fox Brothers Logo">
-        <img src="{{ asset('images/cloth/Drapers.png') }}" alt="Drapers Logo">
-        <img src="{{ asset('images/cloth/NJB.png') }}" alt="NJB Trading Logo">
-        </div>
-
-        <div class="logos spacer"></div>
-
         <div class="cloth-logos-wrapper">
         <div class="logos">
         <img src="{{ asset('images/cloth/HollandSherry.png') }}" alt="Holland & Sherry Logo">
