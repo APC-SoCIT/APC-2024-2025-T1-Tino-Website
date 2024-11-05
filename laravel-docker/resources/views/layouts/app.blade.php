@@ -35,6 +35,7 @@
     <link href="{{ asset('css/history.css') }}" rel="stylesheet">
     <link href="{{ asset('css/map.css') }}" rel="stylesheet">
     <link href="{{ asset('css/contact.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/about.css') }}">
 
      <!-- leaflet -->
      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
