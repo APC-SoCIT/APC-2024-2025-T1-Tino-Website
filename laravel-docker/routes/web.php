@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\URL;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\ProductController;
+use App\Http\Middleware\CartCountMiddleware;
 
 $url = config('app.url');
 URL::forceRootUrl($url);
