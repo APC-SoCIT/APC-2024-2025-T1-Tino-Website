@@ -79,5 +79,3 @@ Route::post('add_booking', [BookingController::class, 'store'])->name('add_booki
 
 // Authentication Routes
 require __DIR__.'/auth.php';
-
-
