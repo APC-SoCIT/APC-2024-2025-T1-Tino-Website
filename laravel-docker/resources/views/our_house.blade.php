@@ -33,10 +33,10 @@
         <hr class="divider-line" />
     </div>
 
-    <!-- TWO -->
+    <!-- About Us -->
 
     <div class="image-two">
-        <div class="image-text-overlay">PHOTO</div>
+        <div class="image-text-overlay">About Us</div>
     </div>
 
     <div class="button-and-line">
@@ -44,10 +44,10 @@
         <hr class="divider-line" />
     </div>
 
-    <!-- THREE -->
+    <!-- Article< -->
 
     <div class="image-three">
-        <div class="image-text-overlay">PHOTO</div>
+        <div class="image-text-overlay">Article</div>
     </div>
 
     <div class="button-and-line">
@@ -55,10 +55,10 @@
         <hr class="divider-line" />
     </div>
 
-    <!-- FOUR -->
+    <!-- Map -->
 
     <div class="image-four">
-        <div class="image-text-overlay">PHOTO</div>
+        <div class="image-text-overlay">Map</div>
     </div>
 
     <div class="button-and-line">
