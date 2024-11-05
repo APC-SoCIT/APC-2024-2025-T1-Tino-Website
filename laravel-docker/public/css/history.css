@@ -1,5 +1,6 @@
+/* Original CSS */
 /* Hero Section */
-.hero-section {
+.hero-section-history {
     position: relative;
     height: 500px;
     background-image: url('/images/bespokeimg1.png');
@@ -9,8 +10,6 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin: 0;
-    padding: 0;
 }
 
 .hero-text {

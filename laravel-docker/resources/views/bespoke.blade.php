@@ -3,7 +3,7 @@
 @section('content')
 <body>
     <!-- Hero Section (Bespoke) -->
-    <div class="hero-section">
+    <div class="hero-section-bespoke">
         <div class="hero-text">
             <h1>Bespoke</h1>
             <p>Quality can only be achieved by using good materials.</p>
@@ -94,6 +94,4 @@
         </div>
     </div>
 </div>
-
-
 @endsection
