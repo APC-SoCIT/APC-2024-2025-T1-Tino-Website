@@ -4,15 +4,15 @@
 @section('content')
 <div class="container about-section">
     <!-- Title Section -->
-    <div class="title-placeholder">
+    <div class="photo-placeholder">
         <h1>Manila’s Finest Bespoke Tailors</h1>
     </div>
 
     <!-- Breadcrumb -->
     <nav aria-label="breadcrumb" class="breadcrumb-nav">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item"><a href="#">Our House</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('welcome') }}">Home</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('our_house') }}">Our House</a></li>
             <li class="breadcrumb-item active" aria-current="page">About</li>
         </ol>
     </nav>

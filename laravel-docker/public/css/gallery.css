@@ -1,0 +1,34 @@
+body {
+    background-color: #f5f0e6;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.gallery-section {
+    padding: 60px 15px;
+}
+
+.gallery-item {
+    margin-bottom: 20px; /* General bottom margin for all items */
+}
+
+.align-top {
+    margin-top: -150px; /* Adjust to align the second image with the first */
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.offset-down {
+    margin-top: 40px; /* Offset for right column */
+    margin-bottom: 20px;
+}
+
+/* New offset for left column */
+.offset-up {
+    margin-top: -30px; /* Adjust this value as needed */
+}

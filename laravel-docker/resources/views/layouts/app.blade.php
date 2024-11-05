@@ -37,6 +37,7 @@
     <link href="{{ asset('css/contact.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/about.css') }}">
     <link rel="stylesheet" href="{{ asset('css/article.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/gallery.css') }}">
 
      <!-- leaflet -->
      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
