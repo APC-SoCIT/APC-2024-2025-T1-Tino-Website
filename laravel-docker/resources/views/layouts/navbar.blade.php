@@ -24,7 +24,10 @@
                 <a class="nav-link" href="{{ route('appointment') }}">Make an Appointment</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navbar-icons" href="#"><i class="fas fa-shopping-bag"></i></a>
+                <a class="nav-link navbar-icons" href="#">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-badge">{{$count}}</span> 
+                </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link navbar-icons" href="#"><i class="fas fa-search"></i></a>
