@@ -29,12 +29,16 @@ Route::middleware([CartCountMiddleware::class])->group(function () {
         Route::get('/accessories', [ProductController::class, 'showAccessories'])->name('shop.accessories');
         Route::get('/gift-cards', [ProductController::class, 'showGiftCards'])->name('shop.gift_cards');
         Route::get('/product/{id}', [ProductController::class, 'show'])->name('product.details');
-
-        // Add this line for the add to cart route
+    
+        // Add to cart route (use POST for adding items to the cart)
         Route::post('add_cart/{id}', [ProductController::class, 'add_cart'])->name('add.cart');
+    
+        // Route for displaying the cart
         Route::get('/cart', [ProductController::class, 'showCart'])->name('cart'); // Add this route
+        Route::post('/delete_cart/{id}', [ProductController::class, 'delete_cart'])->name('delete.cart');
 
     });
+    
 
     // Other Routes
     Route::get('/our-house', function () {
@@ -52,6 +56,23 @@ Route::middleware([CartCountMiddleware::class])->group(function () {
     Route::get('/history', function () {
         return view('history');
     })->name('history');
+    
+    Route::get('/contact', function () {
+        return view('contact');
+    })->name('contact');
+    
+    Route::get('/about', function () {
+        return view('about');
+    })->name('about');
+    
+    Route::get('/gallery', function () {
+        return view('gallery');
+    })->name('gallery');
+    
+    Route::get('/article', function () {
+        return view('article');
+    })->name('article');
+    
 });
 
 // Admin Routes with auth middleware applied
