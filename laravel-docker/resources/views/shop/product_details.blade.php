@@ -16,28 +16,42 @@
         <div class="product-price">₱{{ number_format($product->price, 2) }}</div>
         <p>{{ $product->description }}</p>
         <p>Product Type: {{ $product->product_type }}</p>
-        <div class="size-buttons">
-            <button>5.5</button>
-            <button>6</button>
-            <button>6.5</button>
-            <button>7</button>
-            <button>7.5</button>
-            <button>8</button>
-            <button>8.5</button>
-            <button>9</button>
-            <button>9.5</button>
-            <button>10</button>
-            <button>10.5</button>
-            <button>11</button>
-        </div>
-        <div class="quantity-control">
-            <button>-</button>
-            <span>1</span>
-            <button>+</button>
-            <button>Add to Cart</button>
-        </div>
+
+        <!-- Form to handle size and quantity selection -->
+        <form action="{{ route('add.cart', $product->id) }}" method="POST"> <!-- Changed to POST for better practice -->
+            @csrf <!-- CSRF token for security -->
+            <div class="size-select">
+                <label for="size">Select Size:</label>
+                <select id="size" name="size" required>
+                    <option value="" disabled selected>Select a size</option>
+                    <option value="5.5">5.5</option>
+                    <option value="6">6</option>
+                    <option value="6.5">6.5</option>
+                    <option value="7">7</option>
+                    <option value="7.5">7.5</option>
+                    <option value="8">8</option>
+                    <option value="8.5">8.5</option>
+                    <option value="9">9</option>
+                    <option value="9.5">9.5</option>
+                    <option value="10">10</option>
+                    <option value="10.5">10.5</option>
+                    <option value="11">11</option>
+                </select>
+            </div>
+
+            <div class="quantity-control">
+                <label for="quantity">Quantity:</label>
+                <button type="button" id="decreaseQuantity">-</button>
+                <input type="number" id="quantity" name="quantity" value="1" min="1" readonly>
+                <button type="button" id="increaseQuantity">+</button>
+            </div>
+
+            <button type="submit" class="btn add-to-cart">Add to Cart</button>
+        </form>
+
     </div>
 </div>
+
 
 <style>
     body {
@@ -125,7 +139,7 @@
 </style>
 
 <script>
-    // JavaScript to change the main image when a mini image is clicked
+    // JavaScript to handle main image change
     const miniImages = document.querySelectorAll('.mini-image');
     const mainImage = document.getElementById('mainImage');
 
@@ -133,6 +147,23 @@
         image.addEventListener('click', function() {
             mainImage.src = this.src; // Change the main image source to the clicked mini image source
         });
+    });
+
+    // JavaScript to handle quantity control
+    const decreaseButton = document.getElementById('decreaseQuantity');
+    const increaseButton = document.getElementById('increaseQuantity');
+    const quantityInput = document.getElementById('quantity');
+
+    decreaseButton.addEventListener('click', function() {
+        let currentValue = parseInt(quantityInput.value);
+        if (currentValue > 1) {
+            quantityInput.value = currentValue - 1;
+        }
+    });
+
+    increaseButton.addEventListener('click', function() {
+        let currentValue = parseInt(quantityInput.value);
+        quantityInput.value = currentValue + 1;
     });
 </script>
 

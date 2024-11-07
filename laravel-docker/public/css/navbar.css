@@ -35,6 +35,22 @@
     justify-content: center; /* Centering the nav items */
     flex-grow: 1; /* Allow the nav items to take available space */
 }
+.navbar-icons {
+    position: relative; /* Ensure the badge is positioned relative to the icon */
+}
+
+.cart-badge {
+    position: absolute;
+    top: -5px; /* Adjust based on your icon size */
+    right: -10px; /* Adjust based on your icon size */
+    background-color: red; /* Color of the badge */
+    color: white; /* Text color of the badge */
+    border-radius: 50%; /* Make it a circle */
+    padding: 2px 5px; /* Padding around the text */
+    font-size: 12px; /* Font size of the badge */
+    display: inline-block; /* Ensure it behaves like an inline element */
+}
+
 @media (max-width: 767.98px) {
     .navbar-brand {
         position: absolute;
