@@ -5,73 +5,84 @@ use Illuminate\Support\Facades\URL;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\ProductController;
+use App\Http\Middleware\CartCountMiddleware;
 
 $url = config('app.url');
 URL::forceRootUrl($url);
 
 // Public Routes
 
-// Main/welcome page
-Route::get('/', function () {
-    return view('welcome');
-})->name('welcome');
+Route::middleware([CartCountMiddleware::class])->group(function () {
+    // Main/welcome page
+    Route::get('/', function () {
+        return view('welcome');
+    })->name('welcome');
 
-Route::get('/bespoke', function () {
-    return view('bespoke');
-})->name('bespoke');
+    Route::get('/bespoke', function () {
+        return view('bespoke');
+    })->name('bespoke');
 
-Route::prefix('shop')->group(function () {
-    Route::get('/', [ProductController::class, 'showShop'])->name('shop'); // Change this to use the controller
-    Route::get('/shoes', [ProductController::class, 'showShoes'])->name('shop.shoes'); 
-    Route::get('/jackets', [ProductController::class, 'showJackets'])->name('shop.jackets'); 
-    Route::get('/accessories', [ProductController::class, 'showAccessories'])->name('shop.accessories'); 
-    Route::get('/gift-cards', [ProductController::class, 'showGiftCards'])->name('shop.gift_cards');
-    Route::get('/product/{id}', [ProductController::class, 'show'])->name('product.details');
+    Route::prefix('shop')->group(function () {
+        Route::get('/', [ProductController::class, 'showShop'])->name('shop');
+        Route::get('/shoes', [ProductController::class, 'showShoes'])->name('shop.shoes');
+        Route::get('/jackets', [ProductController::class, 'showJackets'])->name('shop.jackets');
+        Route::get('/accessories', [ProductController::class, 'showAccessories'])->name('shop.accessories');
+        Route::get('/gift-cards', [ProductController::class, 'showGiftCards'])->name('shop.gift_cards');
+        Route::get('/product/{id}', [ProductController::class, 'show'])->name('product.details');
+    
+        // Add to cart route (use POST for adding items to the cart)
+        Route::post('add_cart/{id}', [ProductController::class, 'add_cart'])->name('add.cart');
+    
+        // Route for displaying the cart
+        Route::get('/cart', [ProductController::class, 'showCart'])->name('cart'); // Add this route
+        Route::post('/delete_cart/{id}', [ProductController::class, 'delete_cart'])->name('delete.cart');
+
+    });
+    
+
+    // Other Routes
+    Route::get('/our-house', function () {
+        return view('our_house');
+    })->name('our_house');
+
+    Route::get('/map', function () {
+        return view('map');
+    })->name('map');
+
+    Route::get('/appointment', function () {
+        return view('appointment');
+    })->name('appointment');
+
+    Route::get('/history', function () {
+        return view('history');
+    })->name('history');
+    
+    Route::get('/contact', function () {
+        return view('contact');
+    })->name('contact');
+    
+    Route::get('/about', function () {
+        return view('about');
+    })->name('about');
+    
+    Route::get('/gallery', function () {
+        return view('gallery');
+    })->name('gallery');
+    
+    Route::get('/article', function () {
+        return view('article');
+    })->name('article');
+    
 });
-
-// Other Routes
-Route::get('/our-house', function () {
-    return view('our_house');
-})->name('our_house');
-
-Route::get('/map', function () {
-    return view('map');
-})->name('map');
-
-Route::get('/appointment', function () {
-    return view('appointment');
-})->name('appointment');
-
-Route::get('/history', function () {
-    return view('history');
-})->name('history');
-
-Route::get('/contact', function () {
-    return view('contact'); // points to resources/views/contact.blade.php
-})->name('contact');
-
-Route::get('/about', function () {
-    return view('about'); // points to resources/views/contact.blade.php
-})->name('about');
-
-Route::get('/gallery', function () {
-    return view('gallery'); // points to resources/views/contact.blade.php
-})->name('gallery');
-
-Route::get('/article', function () {
-    return view('article');
-})->name('article');
-
-
 
 // Admin Routes with auth middleware applied
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', [AdminController::class, 'adminDashboard'])->name('dashboard');
-    
+
     // Appointment Routes
     Route::get('/view_appointment', [AdminController::class, 'view_appointment'])->name('view_appointment');
-    Route::get('/bookings', [BookingController::class, 'getBookings'])->name('bookings'); // Get all bookings for FullCalendar
-    Route::get('/bookings/{id}', [BookingController::class, 'getBookingDetails'])->name('booking.details'); // Fetch details for a specific booking
+    Route::get('/bookings', [BookingController::class, 'getBookings'])->name('bookings');
+    Route::get('/bookings/{id}', [BookingController::class, 'getBookingDetails'])->name('booking.details');
     Route::post('/confirm_booking/{id}', [AdminController::class, 'confirmBooking'])->name('confirm.booking');
     Route::post('/decline_booking/{id}', [AdminController::class, 'declineBooking'])->name('decline.booking');
 
@@ -87,8 +98,5 @@ Route::middleware(['auth', 'verified'])->group(function () {
 // Booking Routes (no authentication required)
 Route::post('add_booking', [BookingController::class, 'store'])->name('add_booking');
 
-
-
 // Authentication Routes
 require __DIR__.'/auth.php';
-
