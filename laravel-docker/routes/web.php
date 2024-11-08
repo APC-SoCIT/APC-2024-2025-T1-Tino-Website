@@ -34,7 +34,7 @@ Route::middleware([CartCountMiddleware::class])->group(function () {
         Route::post('add_cart/{id}', [ProductController::class, 'add_cart'])->name('add.cart');
     
         // Route for displaying the cart
-        Route::get('/cart', [ProductController::class, 'showCart'])->name('cart'); // Add this route
+        Route::get('/cart', [ProductController::class, 'showCart'])->name('cart');
         Route::post('/delete_cart/{id}', [ProductController::class, 'delete_cart'])->name('delete.cart');
 
     });
