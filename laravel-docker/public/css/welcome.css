@@ -142,7 +142,8 @@
 .logos {
     display: flex;
     gap: 200px; 
-    animation: scroll-logos 5s linear infinite; 
+    animation: scroll-logos 5s linear infinite;
+    overflow-x:hidden; 
 }
   
 .logos img {
