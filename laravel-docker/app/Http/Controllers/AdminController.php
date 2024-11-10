@@ -5,11 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\Product;
-
 use App\Models\Booking;
-
 use Illuminate\Support\Facades\DB;
-
+use Illuminate\Support\Facades\Mail;
+use App\Mail\AppointmentConfirmation;
+use App\Mail\AppointmentCancelled;
 use Alert;
 
 
@@ -47,6 +47,8 @@ class AdminController extends Controller
         $booking->status = 'confirmed'; // Example of updating the status
         $booking->save();
 
+        Mail::to($booking->email)->send(new AppointmentConfirmation($booking));
+
         Alert::success('Success!', 'You confirmed the appointment');
         return redirect()->route('view_appointment');
     }
@@ -59,6 +61,8 @@ class AdminController extends Controller
             $booking->save();
         }
         
+        Mail::to($booking->email)->send(new AppointmentCancelled($booking));
+
         return redirect()->route('view_appointment')->with('success', 'Booking declined successfully!');
     }
 
