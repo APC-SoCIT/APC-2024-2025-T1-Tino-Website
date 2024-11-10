@@ -45,14 +45,16 @@
             
                 <thead>
                     <tr>
-                        <th class="d-none d-md-table-cell">Appointment Type</th>
+                        <th class="d-none d-md-table-cell">Type</th>
                         <th class="d-none d-md-table-cell">Interests</th>
                         <th class="d-none d-md-table-cell">Client Name</th>
+                        <th class="d-none d-md-table-cell">Date</th>
+                        <th class="d-none d-md-table-cell">Time</th>
                         <th class="d-none d-md-table-cell">Country</th>
                         <th class="d-none d-md-table-cell">Phone</th> 
                         <th class="d-none d-md-table-cell">Email</th> 
                         <th class="d-none d-md-table-cell">Preferred Channel</th>
-                        <th class="d-none d-md-table-cell">Number of People</th> 
+                        <th class="d-none d-md-table-cell">People</th> 
                         <th class="d-none d-md-table-cell">Additional Info</th> 
                         <th class="d-none d-md-table-cell">Actions</th> 
                     </tr>
@@ -68,6 +70,8 @@
                             <td class="d-none d-md-table-cell">{{ $booking->appointment_type }}</td>
                             <td class="d-none d-md-table-cell">{{ $booking->category_of_interest }}</td>
                             <td class="d-none d-md-table-cell">{{ $booking->first_name }} {{ $booking->last_name }}</td>
+                            <td class="d-none d-md-table-cell">{{ $booking->date }}</td>
+                            <td class="d-none d-md-table-cell">{{ $booking->time }}</td>
                             <td class="d-none d-md-table-cell">{{ $booking->country }}</td>
                             <td class="d-none d-md-table-cell">{{ $booking->phone }}</td>
                             <td class="d-none d-md-table-cell">{{ $booking->email }}</td>

@@ -86,7 +86,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/bookings/{id}', [BookingController::class, 'getBookingDetails'])->name('booking.details');
     Route::post('/confirm_booking/{id}', [AdminController::class, 'confirmBooking'])->name('confirm.booking');
     Route::post('/decline_booking/{id}', [AdminController::class, 'declineBooking'])->name('decline.booking');
-
+    
     // Product Routes
     Route::get('/create_product', [AdminController::class, 'create_product'])->name('create.product');
     Route::post('/add_product', [AdminController::class, 'add_product'])->name('add.product');

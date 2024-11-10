@@ -4,7 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\Booking;
 use Illuminate\Http\Request;
+use App\Mail\AppointmentConfirmation;
+use App\Mail\AppointmentCancelled;
+use App\Mail\AppointmentPending;
+use Illuminate\Support\Facades\Mail;
 use Alert;
+
 class BookingController extends Controller
 {
     public function index(Request $request)
@@ -46,7 +51,7 @@ class BookingController extends Controller
         }
 
         // Store the validated data
-        Booking::create([
+        $booking = Booking::create([
             'appointment_type' => $validatedData['appointment_type'],
             'date' => $validatedData['date'],
             'time' => $validatedData['time'],
@@ -60,6 +65,9 @@ class BookingController extends Controller
             'number_of_people' => $validatedData['number_of_people'],
             'additional_info' => $validatedData['additional_info'],
         ]);
+
+        // Send the confirmation email
+        Mail::to($validatedData['email'])->send(new AppointmentPending($booking));
 
         Alert::success('Appointment sent!', 'Remember to check your email for confirmation.');
 
