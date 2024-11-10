@@ -6,6 +6,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\ProductController;
 use App\Http\Middleware\CartCountMiddleware;
+use App\Http\Controllers\SubscriptionController;
 
 $url = config('app.url');
 URL::forceRootUrl($url);
@@ -97,6 +98,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
 // Booking Routes (no authentication required)
 Route::post('add_booking', [BookingController::class, 'store'])->name('add_booking');
+
+Route::post('/subscribe', [SubscriptionController::class, 'subscribe'])->name('subscribe');
+
 
 // Authentication Routes
 require __DIR__.'/auth.php';
