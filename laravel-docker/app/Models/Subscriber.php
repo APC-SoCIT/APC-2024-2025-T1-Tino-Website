@@ -5,12 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Cart extends Model
+class Subscriber extends Model
 {
     use HasFactory;
 
-    public function product()
-    {
-        return $this->hasOne('App\Models\Product', 'id', 'product_id');
-    }
+     // Allow mass assignment for the email field
+     protected $fillable = ['email'];
 }

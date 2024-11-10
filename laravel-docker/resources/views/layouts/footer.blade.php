@@ -1,8 +1,11 @@
 <div class="subscribe-section">
    <p>Be the first to know about new products and sales</p>
-   <input placeholder="Enter Your Email Address" type="email"/>
-   <button>Subscribe</button>
-  </div>
+   <form action="{{ route('subscribe') }}" method="POST">
+       @csrf
+       <input name="email" placeholder="Enter Your Email Address" type="email" required/>
+       <button type="submit">Subscribe</button>
+   </form>
+</div>
 
 <footer>
    <div>

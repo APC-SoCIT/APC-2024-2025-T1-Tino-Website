@@ -79,8 +79,7 @@ class ProductController extends Controller
 
         if ($cart) {
             // If cart exists, update the quantity
-            // Assuming you want to sum quantities and sizes can be different
-            $cart->quantity += $quantity; // Optionally, handle size matching logic
+            $cart->quantity += $quantity;
             $cart->save();
         } else {
             // Create a new Cart instance
@@ -114,15 +113,36 @@ class ProductController extends Controller
         // Return the count
         return response()->json(['count' => $cartCount]);
     }
+
     public function showCart()
     {
         $session_id = session()->getId();
         // Retrieve cart items based on session_id
         $cartItems = Cart::where('session_id', $session_id)->get();
-        
-        // Return the cart view with items
-        return view('cart', compact('cartItems'));
+
+        // Return the cart view inside the 'shop' folder
+        return view('shop.cart', compact('cartItems'));
     }
 
+    public function delete_cart($id)
+    {
+        // Retrieve the cart item based on the session ID and product ID
+        $sessionId = session()->getId();
+        $cartItem = Cart::where('session_id', $sessionId)
+                        ->where('product_id', $id)
+                        ->first();
+    
+        if ($cartItem) {
+            $cartItem->delete(); // Delete the cart item
+            // Optionally, you can add a success message to the session
+            session()->flash('success', 'Product deleted successfully');
+        } else {
+            // Optionally, you can add an error message to the session
+            session()->flash('error', 'Product not found in the cart');
+        }
+    
+        return redirect()->back();
+    }
+    
 
 }
