@@ -7,6 +7,9 @@ use App\Http\Controllers\BookingController;
 use App\Http\Controllers\ProductController;
 use App\Http\Middleware\CartCountMiddleware;
 use App\Http\Controllers\SubscriptionController;
+use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\PaymentController;
+
 
 $url = config('app.url');
 URL::forceRootUrl($url);
@@ -100,6 +103,22 @@ Route::middleware(['auth', 'verified'])->group(function () {
 Route::post('add_booking', [BookingController::class, 'store'])->name('add_booking');
 
 Route::post('/subscribe', [SubscriptionController::class, 'subscribe'])->name('subscribe');
+
+// Display the checkout form with cart items
+Route::get('/checkout', [CheckoutController::class, 'showCheckout'])->name('checkout');
+
+Route::post('/checkout', [CheckoutController::class, 'processCheckout'])->name('processCheckout');
+
+// Checkout complete page
+Route::get('/complete', function () {
+    return view('checkout-complete');
+})->name('checkout-complete');
+
+Route::get('pay', [PaymentController::class, 'pay']);
+Route::get('success', [PaymentController::class, 'success'])->name('success');
+Route::get('cancel', function () {
+    return redirect()->route('checkout')->with('error', 'Payment was canceled');
+})->name('cancel');
 
 
 // Authentication Routes

@@ -46,13 +46,17 @@
 
 </head>
 <body>
-    
-    @include('layouts.navbar')
+    @if(!isset($showNav) || $showNav)
+        @include('layouts.navbar')
+    @endif
 
     @yield('content')
     @yield('custom-css')
 
-    @include('layouts.footer')
+    @if(!isset($showFooter) || $showFooter)
+        @include('layouts.footer')
+    @endif
+    
     <script src="{{ asset('js/map.js') }}"></script>
     <script src="{{ asset('js/carousel.js') }}"></script>
     <script src="{{ asset('js/scroll.js') }}"></script>

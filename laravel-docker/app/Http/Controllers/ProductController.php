@@ -35,7 +35,7 @@ class ProductController extends Controller
     public function showJackets()
     {
         // Fetch only products of type 'JACKETS'
-        $products = Product::where('product_type', 'JACKET')->get();
+        $products = Product::where('product_type', 'JACKETS')->get();
 
         // Return the view with the filtered products
         return view('shop.jackets', compact('products')); // Assuming you have a dedicated view for jackets
